@@ -1,0 +1,39 @@
+<header class="header">
+  <div class="container">
+    <div class="header__container">
+      <a href="./" class="header__logo">
+        <img src="./img/svg/logo.svg" alt="">
+      </a>
+      <a href="./" class="header__logo header__logo_mob">
+        <img src="./img/svg/logo-mob.svg" alt="">
+      </a>
+
+      <nav class="header__nav nav">
+        <ul>
+          <li>
+            <a href="#">Цифровая маркировка</a>
+          </li>
+          <li>
+            <a href="#">Таможенный склад</a>
+          </li>
+          <li>
+            <a href="#">Терминал</a>
+          </li>
+          <li>
+            <a href="#">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="btn-reset btn btn_small header__btn modal-btn">
+        Оставить заявку
+      </button>
+
+      <button class="btn-reset burger header__burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
+        <span class="burger__line"></span>
+      </button>
+
+      @include('./menu.html')
+    </div>
+  </div>
+</header>

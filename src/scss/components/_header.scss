@@ -1,0 +1,63 @@
+// ваш код
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 2rem 0;
+  background-color: var(--pl-white);
+  border-radius: 0 0 0.5rem 0.5rem;
+  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
+  &__logo {
+    display: block;
+    height: 2.5rem;
+    width: auto;
+    position: relative;
+    z-index: 60;
+    @include mobile {
+      display: none;
+      height: 3.6rem;
+    }
+    img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
+    &_mob {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    padding: 0.9rem 7rem;
+    letter-spacing: 0.025em;
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__nav {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
+}

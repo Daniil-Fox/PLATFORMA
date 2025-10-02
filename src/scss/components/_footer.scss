@@ -1,0 +1,74 @@
+.footer {
+  padding: 6rem 0;
+  background-color: var(--pl-white);
+  border-radius: 0.5rem 0.5rem 0 0;
+  @include mobile {
+    border-radius: 1rem;
+  }
+  &__address {
+    flex-grow: 1;
+  }
+  &__container {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    @include mobile {
+      align-items: stretch;
+    }
+  }
+
+  &__socials {
+    @include mobile {
+      margin: 5rem 0;
+    }
+  }
+
+  &__links,
+  &__copy {
+    font-weight: 400;
+    font-size: 2.2rem;
+    color: var(--pl-black);
+
+    @include mobile {
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  &__links a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+
+    div {
+      margin: 0;
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  &__copy {
+    p,
+    div {
+      margin: 0;
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}

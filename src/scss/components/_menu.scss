@@ -1,0 +1,73 @@
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  height: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+  &--active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+  }
+
+  &__content {
+    background-color: var(--pl-white);
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    border-radius: 0 0 0.5rem 0.5rem;
+    padding: 15rem var(--container-offset) var(--container-offset);
+    .menu--active & {
+      transform: translateY(0);
+    }
+  }
+
+  &__nav {
+    flex: 1;
+    margin-bottom: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &__nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5rem;
+  }
+
+  &__btn {
+    width: 100%;
+    font-size: 1.8rem;
+    padding: 1.6rem 2rem;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+// Стили для burger кнопки (если нужно добавить/изменить)
+.burger {
+  @include burger;
+  z-index: 1001;
+
+  &--active {
+    color: var(--pl-black);
+  }
+}

@@ -1,0 +1,64 @@
+<section class="contacts">
+  <div class="container">
+    <div class="contacts__container">
+      <div class="contacts__content">
+        <h2 class="title-lg contacts__title">Контакты</h2>
+
+        <address class="contacts__address address">
+          <div class="address__item">
+            <div>
+              <a href="tel:89146800754" class="link-btn address__link">8 914 680 07 54</a>
+            </div>
+            <div>
+              <a href="tel:84232054084" class="link-btn address__link">8 423 205 40 84</a>
+            </div>
+          </div>
+          <div class="address__item">
+            <a href="mailto:sales@plforma.pro" class="link-btn address__link">sales@plforma.pro</a>
+          </div>
+          <div class="address__item">
+            <p>
+              Приморский край, Надеждинский р-н,<br>
+              c. Вольно-Надеждинское,<br>
+              тер. Опережающего Развития Приморье.
+            </p>
+          </div>
+        </address>
+
+        <button class="btn btn-reset btn_big contacts__btn">Оставить заявку</button>
+      </div>
+
+      <div class="contacts__map">
+        <div id="map"></div>
+      </div>
+      <button class="btn btn-reset btn_big contacts__btn contacts__btn_mob">Оставить заявку</button>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  ymaps.ready(function () {
+    var salesCoords = [43.318504, 131.978757];
+    var myMap = new ymaps.Map("map", {
+      center: salesCoords,
+      zoom: 16,
+    }, {
+      searchControlProvider: "yandex#search"
+    });
+    var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
+      iconLayout: "default#image",
+      iconImageHref: "./img/svg/placemark.svg",
+      iconImageSize: [50, 50],
+      iconImageOffset: [-25, -50],
+    });
+    myMap.geoObjects.add(myPlacemark);
+    myMap.controls.remove("geolocationControl");
+    myMap.controls.remove("searchControl");
+    myMap.controls.remove("trafficControl");
+    myMap.controls.remove("typeSelector");
+    myMap.controls.remove("fullscreenControl");
+    myMap.controls.remove("zoomControl");
+    myMap.controls.remove("rulerControl");
+  });
+</script>

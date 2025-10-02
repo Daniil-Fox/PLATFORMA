@@ -1,0 +1,18 @@
+:root {
+  --font-family: "AV Fontimer", sans-serif;
+  --second-family: "Ubuntu", sans-serif;
+  --content-width: 180rem;
+  --container-offset: 3rem;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  --pl-blue: #072fc4;
+  --pl-lightblue: #516dd6;
+  --pl-black: #000;
+  --pl-red: #ec221f;
+  --pl-white: #fff;
+  --30-black: #f7f7f7;
+  --grey1: #fff;
+  --grey2: #fff;
+  --grey3: #fff;
+  --grey4: #fff;
+}

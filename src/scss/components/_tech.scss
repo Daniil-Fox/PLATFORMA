@@ -1,0 +1,125 @@
+.tech {
+  margin: 10rem 0;
+  padding: 10rem 0;
+  background-color: var(--pl-white);
+  border-radius: 0.5rem;
+
+  @include mobile {
+    border-radius: 1rem;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    padding: 5.5rem 0;
+    border-radius: 1rem;
+  }
+
+  &__wrapper {
+    padding: 0 4rem;
+    @include mobile {
+      padding: 0;
+    }
+  }
+  &__title {
+    margin-bottom: 3.5rem;
+    font-size: 6rem;
+
+    @include mobile {
+      font-size: 4.6rem;
+      margin-bottom: 2.6rem;
+    }
+  }
+
+  &__container {
+    height: 75.7rem;
+
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      height: auto;
+      flex-direction: column;
+      gap: 3rem;
+    }
+  }
+
+  &__img-wrapper {
+    position: relative;
+    height: 100%;
+    padding: 5.5rem;
+
+    @include mobile {
+      padding: 2rem 0;
+    }
+    &:nth-child(1) {
+      @include mobile {
+        height: 28rem;
+      }
+      .tech__img {
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        height: 126.42%;
+        width: 127.5rem;
+        overflow: hidden;
+
+        @include mobile {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .tech__img-capture {
+        @include mobile {
+          text-align: right;
+          margin-left: auto;
+        }
+      }
+    }
+    &:nth-child(2) {
+      @include mobile {
+        height: 25.5rem;
+      }
+      .tech__img {
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        width: 85.2rem;
+
+        @include mobile {
+          height: 100%;
+          width: 85%;
+        }
+      }
+      .tech__img-capture {
+        text-align: right;
+        @include mobile {
+          text-align: left;
+        }
+      }
+    }
+  }
+  &__img-capture {
+    position: relative;
+    z-index: 5;
+    max-width: 21rem;
+    font-weight: 600;
+    font-size: 4.2rem;
+    line-height: 100%;
+    color: var(--pl-white);
+
+    @include mobile {
+      font-size: 2.4rem;
+      color: var(--pl-black);
+      max-width: 12.5rem;
+      line-height: 120%;
+    }
+  }
+  &__img {
+    position: absolute;
+
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
