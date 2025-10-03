@@ -10591,6 +10591,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_slider_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/slider.js */ "./src/js/components/slider.js");
 /* harmony import */ var _functions_burger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions/burger.js */ "./src/js/functions/burger.js");
 /* harmony import */ var _components_collapsible_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/collapsible.js */ "./src/js/components/collapsible.js");
+/* harmony import */ var _components_video_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/video.js */ "./src/js/components/video.js");
+
 
 
 
@@ -10752,7 +10754,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
 
 
-swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper.use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Mousewheel, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.FreeMode]);
+swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper.use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Mousewheel, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.FreeMode, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.EffectFade]);
 new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper(".infra__slider > .swiper", {
   slidesPerView: "auto",
   spaceBetween: 20,
@@ -10789,6 +10791,159 @@ new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper(".more__slider > .swiper", {
   resistance: true,
   // Сопротивление на краях
   resistanceRatio: 0.85 // Коэффициент сопротивления
+});
+const stepsTabs = document.querySelectorAll(".steps__tab");
+if (stepsTabs.length > 0) {
+  const slider = new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper(".steps__slider > .swiper", {
+    slidesPerView: 1,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true
+    }
+  });
+  function clearActive() {
+    stepsTabs.forEach(tab => {
+      tab.classList.remove("active");
+      tab.querySelector(".steps__tab-desc").style.maxHeight = null;
+    });
+  }
+  stepsTabs.forEach((tab, index) => {
+    const desc = tab.querySelector(".steps__tab-desc");
+    tab.addEventListener("click", e => {
+      e.preventDefault();
+      clearActive();
+      tab.classList.add("active");
+      if (desc) {
+        desc.style.maxHeight = desc.scrollHeight + "px";
+      }
+      slider.slideTo(index);
+    });
+  });
+}
+window.addEventListener("DOMContentLoaded", () => {
+  const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callback) => {
+    let swiper;
+    breakpoint = window.matchMedia(breakpoint);
+    const enableSwiper = function (className, settings) {
+      swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper(className, settings);
+      if (callback) {
+        callback(swiper);
+      }
+    };
+    const checker = function () {
+      if (breakpoint.matches) {
+        return enableSwiper(swiperClass, swiperSettings);
+      } else {
+        if (swiper !== undefined) swiper.destroy(true, true);
+        return;
+      }
+    };
+    breakpoint.addEventListener("change", checker);
+    checker();
+  };
+  const someFunc = instance => {
+    if (instance) {
+      instance.on("slideChange", function (e) {
+        console.log("*** mySwiper.activeIndex", instance.activeIndex);
+      });
+    }
+  };
+  resizableSwiper("(max-width: 576px)", ".kind__slider > .swiper", {
+    spaceBetween: 20,
+    slidesPerView: "auto"
+  });
+});
+
+/***/ }),
+
+/***/ "./src/js/components/video.js":
+/*!************************************!*\
+  !*** ./src/js/components/video.js ***!
+  \************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// Управление видео по обёртке data-video-wrapper
+// Поведение:
+// - Если есть кнопка [data-video-play], по клику запускаем видео,
+//   при паузе показываем кнопку снова
+// - Во время проигрывания на <video> добавляется атрибут data-playing="true"
+// - Если кнопки нет, видео автозапускается при попадании в зону видимости >= 10%
+
+function setPlayingState(video, isPlaying) {
+  if (!video) return;
+  if (isPlaying) {
+    video.setAttribute("data-playing", "true");
+  } else {
+    video.removeAttribute("data-playing");
+  }
+}
+function initVideoWithButton(wrapper, video, playBtn) {
+  if (!video) return;
+  const hideButton = () => {
+    if (playBtn) playBtn.hidden = true;
+  };
+  const showButton = () => {
+    if (playBtn) playBtn.hidden = false;
+  };
+  if (playBtn) {
+    playBtn.addEventListener("click", () => {
+      // Для надёжности автоплея на мобильных ставим флаги
+      video.muted = video.muted ?? true;
+      video.playsInline = true;
+      video.play().catch(() => {
+        // Игнорируем отказ автоплея браузером
+      });
+    });
+  }
+  video.addEventListener("playing", () => {
+    setPlayingState(video, true);
+    hideButton();
+  });
+  video.addEventListener("pause", () => {
+    setPlayingState(video, false);
+    showButton();
+  });
+  video.addEventListener("ended", () => {
+    setPlayingState(video, false);
+    showButton();
+  });
+}
+function initVideoAutoplay(wrapper, video) {
+  if (!video) return;
+  // Настройка для автозапуска при видимости >= 10%
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
+        video.muted = true; // требуется большинством браузеров для автоплея
+        video.playsInline = true;
+        video.play().then(() => {
+          setPlayingState(video, true);
+        }).catch(() => {
+          // Ничего: пользовательское взаимодействие может потребоваться
+        });
+      }
+    });
+  }, {
+    threshold: [0, 0.1, 0.25, 0.5, 1]
+  });
+  observer.observe(wrapper);
+  video.addEventListener("playing", () => setPlayingState(video, true));
+  video.addEventListener("pause", () => setPlayingState(video, false));
+  video.addEventListener("ended", () => setPlayingState(video, false));
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const wrappers = document.querySelectorAll("[data-video-wrapper]");
+  if (!wrappers.length) return;
+  wrappers.forEach(wrapper => {
+    const video = wrapper.querySelector("video");
+    const playBtn = wrapper.querySelector("[data-video-play]");
+    if (playBtn) {
+      initVideoWithButton(wrapper, video, playBtn);
+    } else {
+      initVideoAutoplay(wrapper, video);
+    }
+  });
 });
 
 /***/ }),

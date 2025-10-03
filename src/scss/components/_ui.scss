@@ -161,7 +161,29 @@
     }
   }
 }
+[data-video-wrapper] {
+  position: relative;
+}
+.video-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 13rem;
+  height: 13rem;
+  border-radius: 100%;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--pl-white);
+  padding-left: 1rem;
+  svg {
+    width: 50%;
+    height: 50%;
+    fill: var(--pl-black);
+  }
+}
 .burger {
   @include burger;
 }

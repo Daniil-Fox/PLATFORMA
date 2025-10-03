@@ -1,0 +1,46 @@
+.works {
+  padding: 9rem 0 10rem;
+
+  &__title {
+    margin-bottom: 4rem;
+  }
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  &__item {
+    flex-basis: calc(50% - 1rem);
+    flex-grow: 1;
+    padding: 4.5rem 5rem 4.1rem;
+    padding-right: 24.5rem;
+    background-color: var(--pl-white);
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  &__capture {
+    margin: 0;
+    margin-bottom: 2.4rem;
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 130%;
+    color: var(--pl-blue);
+  }
+
+  &__desc {
+    margin: 0;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 140%;
+    color: var(--pl-black);
+  }
+
+  &__icon {
+    position: absolute;
+    right: 0;
+    bottom: -0.4rem;
+  }
+}

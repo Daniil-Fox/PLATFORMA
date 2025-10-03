@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>Platforma</title>
+  <link rel="preload" href="fonts/AVFontimer-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/AVFontimer-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/AVFontimer-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/AVFontimer-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/AVFontimer-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Ubuntu-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="js/main.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=221cbec3-01c0-4b1a-8417-d7d65e719c35&lang=ru_RU"
+    type="text/javascript"></script>
+</head>
+
+
+<body class="page__body">
+  <div class="site-container">
+    <header class="header">
+  <div class="container">
+    <div class="header__container">
+      <a href="./" class="header__logo">
+        <img src="./img/svg/logo.svg" alt="">
+      </a>
+      <a href="./" class="header__logo header__logo_mob">
+        <img src="./img/svg/logo-mob.svg" alt="">
+      </a>
+
+      <nav class="header__nav nav">
+        <ul>
+          <li>
+            <a href="#">Цифровая маркировка</a>
+          </li>
+          <li>
+            <a href="#">Таможенный склад</a>
+          </li>
+          <li>
+            <a href="#">Терминал</a>
+          </li>
+          <li>
+            <a href="#">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="btn-reset btn btn_small header__btn modal-btn">
+        Оставить заявку
+      </button>
+
+      <button class="btn-reset burger header__burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
+        <span class="burger__line"></span>
+      </button>
+
+      <div class="menu" data-menu>
+  <div class="menu__overlay" data-menu-overlay></div>
+  <div class="menu__content">
+    <nav class="menu__nav nav">
+      <ul>
+        <li>
+          <a href="#digital" data-menu-item>Цифровая маркировка</a>
+        </li>
+        <li>
+          <a href="#storage" data-menu-item>Таможенный склад</a>
+        </li>
+        <li>
+          <a href="#terminal" data-menu-item>Терминал</a>
+        </li>
+        <li>
+          <a href="#contacts" data-menu-item>Контакты</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="menu__footer">
+      <a href="#" class="btn btn-reset menu__btn">Оставить заявку</a>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</header>
+
+    <main class="main">
+
+      <section class="mark-hero">
+  <div class="mark-hero__video-wrapper" data-video-wrapper>
+    <div class="mark-hero__video-poster">
+      <picture>
+        <source srcset="./img/mark-mob.webp" type="image/webp" media="(max-width: 576px)">
+        <source srcset="./img/mark.webp" type="image/webp">
+        <img loading="lazy" src="./img/mark.jpg" class="image" width="1920" height="1000" alt="">
+      </picture>
+    </div>
+    <div class="mark-hero__video">
+      <video src=""></video>
+    </div>
+  </div>
+  <div class="container mark-hero__container">
+    <div class="mark-hero__content">
+      <h1 class="mark-hero__title">Маркировка товаров на&nbsp;таможенном складе</h1>
+      <button class="btn-reset btn btn_big mark-hero__btn">
+        Рассчитать стоимость
+      </button>
+    </div>
+  </div>
+</section>
+
+      <section class="benefits">
+  <div class="container">
+    <h2 class="title-lg benefits__title">Преимущества</h2>
+
+    <div class="benefits__container">
+      <div class="benefits__item">
+        <div class="benefits__item-icon">
+          <img src="./img/benefits/01.svg" width="48" height="48" alt="">
+        </div>
+
+        <div class="benefits__item-content">
+          <p class="benefits__item-title">Статус сервис-провайдер</p>
+          <div class="benefits__item-desc">
+            <p>
+              Выпускаем коды, стикеруем, оформляем
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="benefits__item">
+        <div class="benefits__item-icon">
+          <img src="./img/benefits/02.svg" width="48" height="48" alt="">
+        </div>
+
+        <div class="benefits__item-content">
+          <p class="benefits__item-title">Маркируем оперативно </p>
+          <div class="benefits__item-desc">
+            <p>
+              До&nbsp;5&nbsp;дней в&nbsp;зависимости от&nbsp;объёма
+
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="benefits__item">
+        <div class="benefits__item-icon">
+          <img src="./img/benefits/03.svg" width="48" height="48" alt="">
+        </div>
+
+        <div class="benefits__item-content">
+          <p class="benefits__item-title">Мы&nbsp;проверяли </p>
+          <div class="benefits__item-desc">
+            <p>
+              Цены ниже, чем&nbsp;у&nbsp;конкурентов
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="benefits__item">
+        <div class="benefits__item-icon">
+          <img src="./img/benefits/04.svg" width="48" height="48" alt="">
+        </div>
+
+        <div class="benefits__item-content">
+          <p class="benefits__item-title">Все&nbsp;виды этикеток </p>
+          <div class="benefits__item-desc">
+            <p>
+              Работаем по ТЗ
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="benefits__item">
+        <div class="benefits__item-icon">
+          <img src="./img/benefits/05.svg" width="48" height="48" alt="">
+        </div>
+
+        <div class="benefits__item-content">
+          <p class="benefits__item-title">Полный цикл </p>
+          <div class="benefits__item-desc">
+            <p>
+              Регистрация честного знака,<br>
+              печать и нанесение кодов
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="benefits__item">
+        <div class="benefits__item-icon">
+          <img src="./img/benefits/06.svg" width="48" height="48" alt="">
+        </div>
+
+        <div class="benefits__item-content">
+          <p class="benefits__item-title">Обучение </p>
+          <div class="benefits__item-desc">
+            <p>
+              Интеграция с&nbsp;вашей системой
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="stock">
+  <div class="stock__wrapper">
+    <div class="stock__img">
+      <picture>
+        <source srcset="./img/stock-mob.webp" type="image/webp" media="(max-width: 576px)">
+        <source srcset="./img/stock.webp" type="image/webp">
+        <img loading="lazy" src="./img/stock.jpg" class="image" width="1920" height="500" alt="">
+      </picture>
+    </div>
+    <div class="stock__content-wrapper">
+      <div class="stock__content">
+        <div class="stock__text">
+          <h2 class="title-lg stock__title">Акция</h2>
+          <p class="desc stock__desc">
+            Хранение на складе<br>
+            в&nbsp;период маркировки БЕСПЛАТНО!
+          </p>
+          <button class="btn-reset btn btn_big stock__btn">Оставить заявку</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="steps">
+  <div class="steps__container">
+    <div class="steps__content">
+      <h2 class="title-xl steps__title">Как это работает</h2>
+
+      <div class="steps__tabs">
+        <div class="steps__tab active">
+          <button class="steps__tab-btn btn-reset">Поступление товара</button>
+          <div class="steps__tab-desc desc" style="max-height: unset;">
+            <p>
+              Товар поступает
+              на&nbsp;таможенный склад
+            </p>
+          </div>
+        </div>
+        <div class="steps__tab">
+          <button class="steps__tab-btn btn-reset">Создание карточек</button>
+          <div class="steps__tab-desc desc">
+            <p>
+              Создание карточек товара
+              в «Национальном каталоге»
+
+            </p>
+          </div>
+        </div>
+        <div class="steps__tab">
+          <button class="steps__tab-btn btn-reset">Выпуск кодов</button>
+          <div class="steps__tab-desc desc">
+            <p>
+              Выпуск кодов маркировки «Честный Знак» и агрегационных кодов
+
+            </p>
+          </div>
+        </div>
+        <div class="steps__tab">
+          <button class="steps__tab-btn btn-reset">Печать кодов</button>
+          <div class="steps__tab-desc desc">
+            <p>
+              Выпуск кодов маркировки «Честный Знак» и агрегационных кодов
+
+            </p>
+          </div>
+        </div>
+        <div class="steps__tab">
+          <button class="steps__tab-btn btn-reset">Проверка</button>
+          <div class="steps__tab-desc desc">
+            <p>
+              Выпуск кодов маркировки «Честный Знак» и агрегационных кодов
+
+            </p>
+          </div>
+        </div>
+        <div class="steps__tab">
+          <button class="steps__tab-btn btn-reset">Отгрузка</button>
+          <div class="steps__tab-desc desc">
+            <p>
+              Отгрузка, выпуск в свободное
+              обращение
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="steps__slider">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="steps__video" data-video-wrapper>
+              <video src="" poster="./img/steps/01.webp"></video>
+              <button class="btn-reset video-play steps__play" data-video-play>
+                <svg class="">
+                  <use xlink:href="img/sprite.svg#play"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="steps__video" data-video-wrapper>
+              <video src="" poster="./img/steps/02.webp"></video>
+              <button class="btn-reset video-play steps__play" data-video-play>
+                <svg class="">
+                  <use xlink:href="img/sprite.svg#play"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="steps__video" data-video-wrapper>
+              <video src="" poster="./img/steps/03.webp"></video>
+              <button class="btn-reset video-play steps__play" data-video-play>
+                <svg class="">
+                  <use xlink:href="img/sprite.svg#play"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="steps__video" data-video-wrapper>
+              <video src="" poster="./img/steps/04.webp"></video>
+              <button class="btn-reset video-play steps__play" data-video-play>
+                <svg class="">
+                  <use xlink:href="img/sprite.svg#play"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="steps__video" data-video-wrapper>
+              <video src="" poster="./img/steps/05.webp"></video>
+              <button class="btn-reset video-play steps__play" data-video-play>
+                <svg class="">
+                  <use xlink:href="img/sprite.svg#play"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="steps__video" data-video-wrapper>
+              <video src="" poster="./img/steps/06.webp"></video>
+              <button class="btn-reset video-play steps__play" data-video-play>
+                <svg class="">
+                  <use xlink:href="img/sprite.svg#play"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="works">
+  <div class="container">
+    <h2 class="title-lg works__title">Варианты работы</h2>
+
+    <div class="works__container">
+      <div class="works__item">
+        <p class="works__capture">
+          1 Под ключ
+        </p>
+
+        <p class="works__desc">
+          Полностью под ключ: официальный статус провайдера “Честный Знак” позволяет нам самим выпускать коды
+          маркировки. Стикеровка, заведение карточек товара, интеграция с вашим складом.
+        </p>
+
+        <div class="works__icon">
+          <img src="./img/works/01.svg" aria-hidden="true" alt="">
+        </div>
+      </div>
+
+      <div class="works__item">
+        <p class="works__capture">
+          2 Выпуск кодов
+        </p>
+
+        <p class="works__desc">
+          Без&nbsp;стикеровки, только выпуск кодов маркировки: Выпускаем кода маркировки, отгружаем товар. Нанесение
+          кодов маркировки происходит на&nbsp;вашем складе.
+
+        </p>
+
+        <div class="works__icon">
+          <img src="./img/works/02.svg" aria-hidden="true" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="stock stock_avoid">
+  <div class="stock__wrapper">
+    <div class="stock__img">
+      <picture>
+        <source srcset="./img/avoid-mob.webp" type="image/webp" media="(max-width: 576px)">
+        <source srcset="./img/avoid.webp" type="image/webp">
+        <img loading="lazy" src="./img/avoid.jpg" class="image" width="1920" height="500" alt="">
+      </picture>
+    </div>
+    <div class="stock__content-wrapper">
+      <div class="stock__content">
+        <div class="stock__text">
+          <p class="desc stock__desc">
+            Поможем избежать штрафов до&nbsp;300&nbsp;000&nbsp;₽ зa&nbsp;отсутствие маркировки
+          </p>
+          <button class="btn-reset btn btn_big stock__btn">Оставить заявку</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="format">
+  <div class="container format__container">
+    <div class="format__content">
+      <h2 class="title-xl format__title">Формирование
+        цены этикетки
+      </h2>
+      <div class="desc format__desc">
+        <ol>
+          <li>Выпуск кода маркировки в&nbsp;Честном знаке</li>
+          <li>Печать этикетки, зависит от&nbsp;размера этикетки</li>
+          <li>Стикеровка (оклейка)</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="format__img">
+      <picture>
+        <source srcset="./img/stick-mob.webp" type="image/webp" media="(max-width: 576px)">
+        <source srcset="./img/stick.webp" type="image/webp">
+        <img loading="lazy" src="./img/stick.jpg" class="image" width="1920" height="500" alt="">
+      </picture>
+    </div>
+  </div>
+</section>
+
+      <section class="kind">
+  <div class="container">
+    <h2 class="title-lg kind__title">Популярные виды этикеток</h2>
+
+    <div class="kind__slider">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="kind__item">
+              <div class="kind__header">
+                <div class="kind__size">
+                  15x15 мм
+                </div>
+              </div>
+
+              <div class="kind__img">
+                <picture>
+                  <source srcset="./img/kind/01-mob.webp" type="image/webp" media="(max-width: 576px)">
+                  <source srcset="./img/kind/01.webp" type="image/webp">
+                  <img loading="lazy" src="./img/kind/01.png" class="image" width="435" height="307" alt="">
+                </picture>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="kind__item">
+              <div class="kind__header">
+                <div class="kind__size">
+                  20x20 мм
+                </div>
+              </div>
+
+              <div class="kind__img">
+                <picture>
+                  <source srcset="./img/kind/02-mob.webp" type="image/webp" media="(max-width: 576px)">
+                  <source srcset="./img/kind/02.webp" type="image/webp">
+                  <img loading="lazy" src="./img/kind/02.png" class="image" width="435" height="307" alt="">
+                </picture>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="kind__item">
+              <div class="kind__header">
+                <div class="kind__size">
+                  29x20 мм
+                </div>
+              </div>
+
+              <div class="kind__img">
+                <picture>
+                  <source srcset="./img/kind/03-mob.webp" type="image/webp" media="(max-width: 576px)">
+                  <source srcset="./img/kind/03.webp" type="image/webp">
+                  <img loading="lazy" src="./img/kind/03.png" class="image" width="435" height="307" alt="">
+                </picture>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="kind__item">
+              <div class="kind__header">
+                <div class="kind__size">
+                  43x25 мм
+                </div>
+              </div>
+
+              <div class="kind__img">
+                <picture>
+                  <source srcset="./img/kind/04-mob.webp" type="image/webp" media="(max-width: 576px)">
+                  <source srcset="./img/kind/04.webp" type="image/webp">
+                  <img loading="lazy" src="./img/kind/04.png" class="image" width="435" height="307" alt="">
+                </picture>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="kind__item">
+              <div class="kind__header">
+                <div class="kind__size">
+                  58х40 мм
+                </div>
+              </div>
+
+              <div class="kind__img">
+                <picture>
+                  <source srcset="./img/kind/05-mob.webp" type="image/webp" media="(max-width: 576px)">
+                  <source srcset="./img/kind/05.webp" type="image/webp">
+                  <img loading="lazy" src="./img/kind/05.png" class="image" width="435" height="307" alt="">
+                </picture>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="kind__item">
+              <div class="kind__header">
+                <div class="kind__size">
+                  58х60 мм
+                </div>
+              </div>
+
+              <div class="kind__img">
+                <picture>
+                  <source srcset="./img/kind/06-mob.webp" type="image/webp" media="(max-width: 576px)">
+                  <source srcset="./img/kind/06.webp" type="image/webp">
+                  <img loading="lazy" src="./img/kind/06.png" class="image" width="435" height="307" alt="">
+                </picture>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide swiper-slide_rm">
+            <div class="kind__item">
+              <div class="kind__header">
+                <div class="kind__size">
+                  Мы&nbsp;так&nbsp;же&nbsp;можем изготовить этикетку под&nbsp;ваш&nbsp;индивидуальный запрос
+                </div>
+              </div>
+
+              <div class="kind__img">
+                <picture>
+                  <source srcset="./img/kind/07-mob.webp" type="image/webp" media="(max-width: 576px)">
+                  <source srcset="./img/kind/07.webp" type="image/webp">
+                  <img loading="lazy" src="./img/kind/07.png" class="image" width="435" height="307" alt="">
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="infra">
+  <div class="container">
+    <h2 class="title-lg infra__title">
+      Инфраструктура
+    </h2>
+  </div>
+  <div class="infra__slider">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="infra__img">
+            <picture>
+              <source srcset="./img/infra/01-mob.webp" type="image/webp" media="(max-width: 576px)">
+              <source srcset="./img/infra/01.webp" type="image/webp">
+              <img loading="lazy" src="./img/infra/01.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="infra__img">
+            <picture>
+              <source srcset="./img/infra/02-mob.webp" type="image/webp" media="(max-width: 576px)">
+              <source srcset="./img/infra/02.webp" type="image/webp">
+              <img loading="lazy" src="./img/infra/02.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="infra__img">
+            <picture>
+              <source srcset="./img/infra/03-mob.webp" type="image/webp" media="(max-width: 576px)">
+              <source srcset="./img/infra/03.webp" type="image/webp">
+              <img loading="lazy" src="./img/infra/03.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="chars">
+  <div class="container">
+    <h2 class="title-lg chars__title">
+      Технические характеристики<br>
+      складского комплекса
+    </h2>
+
+
+    <div class="chars__container">
+      <div class="chars__item">
+        <p class="chars__item-title"> Таможенный склад</p>
+
+        <div class="chars__item-footer">
+          <p class="chars__item-value">
+            4500 м<sup>2</sup>
+          </p>
+
+          <div class="chars__item-icon">
+            <img src="./img/chars/01.svg" alt="Иконка Ценовая политика">
+          </div>
+        </div>
+      </div>
+
+      <div class="chars__item">
+        <p class="chars__item-title">Открытый склад </p>
+
+        <div class="chars__item-footer">
+          <p class="chars__item-value">
+            20000 м<sup>2</sup>
+          </p>
+
+          <div class="chars__item-icon">
+            <img src="./img/chars/02.svg" alt="Иконка Ценовая политика">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="chars__item">
+        <p class="chars__item-title">Закрытая территория для маркировки </p>
+
+        <div class="chars__item-footer">
+          <p class="chars__item-value">
+            450 м<sup>2</sup>
+          </p>
+
+          <div class="chars__item-icon">
+            <img src="./img/chars/03.svg" alt="Иконка Ценовая политика">
+          </div>
+        </div>
+      </div>
+
+      <div class="chars__item chars__item_big-icon">
+        <p class="chars__item-title">Вместимость таможенного склада</p>
+
+        <div class="chars__item-footer">
+          <p class="chars__item-value">
+            400 TEU
+          </p>
+
+          <div class="chars__item-icon">
+            <img src="./img/chars/04.svg" alt="Иконка Ценовая политика">
+          </div>
+        </div>
+      </div>
+
+      <div class="chars__item chars__item_big-icon">
+        <p class="chars__item-title">Вместимость открытого склада</p>
+
+        <div class="chars__item-footer">
+          <p class="chars__item-value">
+            600 TEU
+          </p>
+
+          <div class="chars__item-icon">
+            <img src="./img/chars/05.svg" alt="Иконка Ценовая политика">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      <section class="more">
+  <div class="container">
+    <div class="more__header">
+      <div class="more__text">
+        <h2 class="more__title title-lg">Вопросы и ответы</h2>
+        <p class="desc more__desc">
+          Больше информации в наших соц. сетях
+        </p>
+      </div>
+
+      <ul class="more__socials socials list-reset">
+        <li>
+          <a href="#" target="_blank">
+            <img src="./img/vk.svg" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img src="./img/youtube.svg" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img src="./img/inst.svg" alt="">
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <div class="more__slider">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="more__img">
+            <picture>
+              <source srcset="./img/more/01.webp" type="image/webp">
+              <img loading="lazy" src="./img/more/01.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="more__img">
+            <picture>
+              <source srcset="./img/more/02.webp" type="image/webp">
+              <img loading="lazy" src="./img/more/02.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="more__img">
+            <picture>
+              <source srcset="./img/more/03.webp" type="image/webp">
+              <img loading="lazy" src="./img/more/03.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="more__img">
+            <picture>
+              <source srcset="./img/more/04.webp" type="image/webp">
+              <img loading="lazy" src="./img/more/04.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="more__img">
+            <picture>
+              <source srcset="./img/more/05.webp" type="image/webp">
+              <img loading="lazy" src="./img/more/05.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="contacts">
+  <div class="container">
+    <div class="contacts__container">
+      <div class="contacts__content">
+        <h2 class="title-lg contacts__title">Контакты</h2>
+
+        <address class="contacts__address address">
+          <div class="address__item">
+            <div>
+              <a href="tel:89146800754" class="link-btn address__link">8 914 680 07 54</a>
+            </div>
+            <div>
+              <a href="tel:84232054084" class="link-btn address__link">8 423 205 40 84</a>
+            </div>
+          </div>
+          <div class="address__item">
+            <a href="mailto:sales@plforma.pro" class="link-btn address__link">sales@plforma.pro</a>
+          </div>
+          <div class="address__item">
+            <p>
+              Приморский край, Надеждинский р-н,<br>
+              c. Вольно-Надеждинское,<br>
+              тер. Опережающего Развития Приморье.
+            </p>
+          </div>
+        </address>
+
+        <button class="btn btn-reset btn_big contacts__btn">Оставить заявку</button>
+      </div>
+
+      <div class="contacts__map">
+        <div id="map"></div>
+      </div>
+      <button class="btn btn-reset btn_big contacts__btn contacts__btn_mob">Оставить заявку</button>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  ymaps.ready(function () {
+    var salesCoords = [43.318504, 131.978757];
+    var myMap = new ymaps.Map("map", {
+      center: salesCoords,
+      zoom: 16,
+    }, {
+      searchControlProvider: "yandex#search"
+    });
+    var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
+      iconLayout: "default#image",
+      iconImageHref: "./img/svg/placemark.svg",
+      iconImageSize: [50, 50],
+      iconImageOffset: [-25, -50],
+    });
+    myMap.geoObjects.add(myPlacemark);
+    myMap.controls.remove("geolocationControl");
+    myMap.controls.remove("searchControl");
+    myMap.controls.remove("trafficControl");
+    myMap.controls.remove("typeSelector");
+    myMap.controls.remove("fullscreenControl");
+    myMap.controls.remove("zoomControl");
+    myMap.controls.remove("rulerControl");
+  });
+</script>
+
+    </main>
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__container">
+      <address class="footer__address address">
+        <div class="address__item">
+          <div>
+            <a href="tel:89146800754" class="link-btn address__link">8 914 680 07 54</a>
+          </div>
+          <div>
+            <a href="tel:84232054084" class="link-btn address__link">8 423 205 40 84</a>
+          </div>
+        </div>
+        <div class="address__item">
+          <a href="mailto:sales@plforma.pro" class="link-btn address__link">sales@plforma.pro</a>
+        </div>
+        <div class="address__item">
+          <p>
+            Приморский край, Надеждинский р-н,<br>
+            c. Вольно-Надеждинское,<br>
+            тер. Опережающего Развития Приморье.
+          </p>
+        </div>
+      </address>
+
+      <div class="footer__right">
+        <address class="footer__socials">
+          <ul class="socials list-reset">
+            <li>
+              <a href="#" target="_blank">
+                <img src="./img/wa.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img src="./img/tg.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img src="./img/vk.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img src="./img/youtube.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img src="./img/inst.svg" alt="">
+              </a>
+            </li>
+          </ul>
+        </address>
+
+        <div class="footer__links">
+          <div>
+            <a href="#" class="footer__link link-btn" target="_blank">Политика конфиденциальности</a>
+          </div>
+        </div>
+
+        <small class="footer__copy">
+          <p>
+            ©2025 Платформа
+          </p>
+        </small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>
