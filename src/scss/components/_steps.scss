@@ -209,4 +209,28 @@
       padding-top: 0.8rem;
     }
   }
+
+  &__tab:not(.active) {
+    @include hover {
+      &::before,
+      .steps__tab-btn {
+        color: var(--pl-lightblue);
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+      &::before,
+      .steps__tab-btn {
+        color: var(--pl-lightblue);
+      }
+    }
+
+    &:active {
+      &::before,
+      .steps__tab-btn {
+        color: var(--pl-blue);
+      }
+    }
+  }
 }
