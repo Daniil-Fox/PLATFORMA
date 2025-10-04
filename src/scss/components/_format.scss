@@ -1,11 +1,23 @@
 .format {
   padding: 10rem 0;
-
+  @include mobile {
+    padding: 6rem 0;
+  }
   &__container {
     display: flex;
     gap: 2rem;
     max-width: calc(192rem + var(--container-offset) * 2);
     padding: 0;
+
+    @include mobile {
+      max-width: 100%;
+      margin: 0 var(--container-offset);
+      flex-direction: column;
+      background-color: var(--pl-white);
+      border-radius: 1rem;
+      padding: 5.4rem 4rem 6rem;
+      gap: 5rem;
+    }
   }
 
   &__content {
@@ -13,16 +25,29 @@
     flex-grow: 1;
     background-color: var(--pl-white);
     padding: 9.8rem 10.1rem 9rem;
+    @include mobile {
+      padding: 0;
+      flex-basis: unset;
+      background-color: unset;
+    }
   }
   &__title {
     margin-bottom: 3.9rem;
     line-height: 100%;
+
+    @include mobile {
+      line-height: 120%;
+    }
   }
 
   &__desc {
     font-weight: 500;
     font-size: 2.8rem;
     line-height: 130%;
+
+    @include mobile {
+      font-size: 2.4rem;
+    }
     ol,
     ul {
       margin: 0;
@@ -30,6 +55,9 @@
 
       li:not(:last-child) {
         margin-bottom: 2.3rem;
+        @include small-tablet {
+          margin-bottom: 1.5rem;
+        }
       }
     }
     ul {
@@ -61,7 +89,10 @@
     min-height: 57.4rem;
 
     position: relative;
-
+    @include mobile {
+      flex-basis: unset;
+      min-height: 27rem;
+    }
     img {
       position: absolute;
       left: 0;

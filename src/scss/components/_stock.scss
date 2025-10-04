@@ -1,6 +1,8 @@
 .stock {
   padding: 10rem 0;
-
+  @include mobile {
+    padding: 6rem 0;
+  }
   &__wrapper {
     position: relative;
   }
@@ -10,11 +12,19 @@
     width: 100%;
     border-radius: 0.5rem;
     overflow: hidden;
+
+    @include mobile {
+      border-radius: 1rem;
+    }
     img {
       display: block;
       width: 100%;
       height: auto;
       max-height: 50rem;
+
+      @include mobile {
+        max-height: 53.5rem;
+      }
     }
   }
   &__content-wrapper {
@@ -35,15 +45,36 @@
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: left bottom;
+
+    @include mobile {
+      padding: 4.5rem 4rem;
+      mask-image: url("./../img/svg/stock-mob.svg");
+    }
   }
   &__text {
     width: 100%;
     max-width: 44.6rem;
+    @include mobile {
+      max-width: 27.2rem;
+    }
   }
   &__btn {
     width: 100%;
     font-size: 2.6rem;
     padding: 1.6rem;
+
+    @include mobile {
+      font-size: 2rem;
+      padding: 0.9rem;
+    }
+  }
+
+  &__title {
+    @include mobile {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
   }
   &__desc {
     margin-bottom: 3rem;
@@ -53,6 +84,14 @@
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
+
+    @include mobile {
+      line-clamp: 3;
+      -webkit-line-clamp: 3;
+      font-size: 2rem;
+      margin-bottom: 1.1rem;
+      line-height: 130%;
+    }
   }
 
   &_avoid {
@@ -61,15 +100,30 @@
       padding: 0 var(--container-offset);
       margin: 0 auto;
       position: relative;
+
+      @include mobile {
+        max-width: 100%;
+        padding: 0;
+      }
     }
     .stock__content-wrapper {
       max-width: 100%;
       left: var(--container-offset);
       right: var(--container-offset);
+
+      @include mobile {
+        left: 0;
+        right: 0;
+      }
     }
     .stock__content {
       max-width: 71rem;
       mask-image: url("./../img/svg/stock-avoid.svg");
+
+      @include mobile {
+        padding: 4.5rem 5rem 5rem;
+        mask-image: url("./../img/svg/stock-avoid-mob.svg");
+      }
     }
     .stock__desc {
       margin-bottom: 2.8rem;
@@ -79,9 +133,26 @@
       font-weight: 500;
       line-clamp: 3;
       -webkit-line-clamp: 3;
+
+      @include mobile {
+        font-size: 2.4rem;
+        font-weight: 400;
+        margin-bottom: 2rem;
+        line-height: 130%;
+      }
+    }
+    .stock__text {
+      @include mobile {
+        max-width: 31.5rem;
+      }
     }
     .stock__btn {
       padding: 1.5rem;
+
+      @include mobile {
+        padding: 0.9rem 5.3rem;
+        width: auto;
+      }
     }
   }
 }

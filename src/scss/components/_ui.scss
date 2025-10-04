@@ -183,6 +183,12 @@
     height: 50%;
     fill: var(--pl-black);
   }
+
+  @include mobile {
+    width: 6.4rem;
+    height: 6.4rem;
+    top: 57.5%;
+  }
 }
 .burger {
   @include burger;

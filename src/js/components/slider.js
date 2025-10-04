@@ -49,9 +49,18 @@ const stepsTabs = document.querySelectorAll(".steps__tab");
 if (stepsTabs.length > 0) {
   const slider = new Swiper(".steps__slider > .swiper", {
     slidesPerView: 1,
-    effect: "fade",
-    fadeEffect: {
-      crossFade: true,
+
+    breakpoints: {
+      320: {
+        slidesPerView: "auto",
+        spaceBetween: 30,
+      },
+      577: {
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+      },
     },
   });
 

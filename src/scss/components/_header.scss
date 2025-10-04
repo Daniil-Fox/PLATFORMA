@@ -9,6 +9,9 @@
   background-color: var(--pl-white);
   border-radius: 0 0 0.5rem 0.5rem;
   box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
+  @include mobile {
+    border-radius: 0 0 1rem 1rem;
+  }
   &__logo {
     display: block;
     height: 2.5rem;

@@ -2,6 +2,12 @@
   margin-bottom: 8.6rem;
   position: relative;
   height: 100vh;
+  border-radius: 0 0 0.5rem 0.5rem;
+  overflow: hidden;
+  @include mobile {
+    border-radius: 0 0 1rem 1rem;
+    margin-bottom: 5.4rem;
+  }
   &__video-wrapper {
     position: absolute;
     z-index: -1;
@@ -53,6 +59,10 @@
     justify-content: flex-end;
     padding: 11.5rem var(--container-offset);
     width: 100%;
+
+    @include mobile {
+      padding: 6.2rem var(--container-offset);
+    }
   }
 
   &__title {
@@ -63,9 +73,21 @@
     font-size: 9rem;
     line-height: 100%;
     color: var(--pl-white);
+
+    @include mobile {
+      font-size: 5rem;
+      line-height: 110%;
+      margin-bottom: 3rem;
+    }
   }
 
   &__btn {
     padding: 2.3rem 10.7rem;
+
+    @include mobile {
+      padding: 2.4rem 3rem;
+      display: flex;
+      width: 100%;
+    }
   }
 }

@@ -1,8 +1,15 @@
 .works {
   padding: 9rem 0 10rem;
 
+  @include mobile {
+    padding: 6rem 0;
+  }
   &__title {
     margin-bottom: 4rem;
+
+    @include mobile {
+      margin-bottom: 3.5rem;
+    }
   }
   &__container {
     display: flex;
@@ -19,6 +26,12 @@
     position: relative;
     border-radius: 0.5rem;
     overflow: hidden;
+
+    @include mobile {
+      flex-basis: 100%;
+      padding: 3.4rem 4rem;
+      border-radius: 1rem;
+    }
   }
 
   &__capture {
@@ -28,6 +41,10 @@
     font-size: 2.8rem;
     line-height: 130%;
     color: var(--pl-blue);
+
+    @include mobile {
+      margin-bottom: 1.4rem;
+    }
   }
 
   &__desc {
@@ -36,11 +53,31 @@
     font-size: 2.4rem;
     line-height: 140%;
     color: var(--pl-black);
+
+    @include mobile {
+      font-size: 2rem;
+      max-width: 29rem;
+      line-height: 150%;
+    }
   }
 
   &__icon {
     position: absolute;
     right: 0;
     bottom: -0.4rem;
+
+    @include mobile {
+      width: 20rem;
+      height: 28rem;
+      right: -4rem;
+      top: 6.4rem;
+      bottom: unset;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
 }

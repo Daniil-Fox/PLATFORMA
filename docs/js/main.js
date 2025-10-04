@@ -10796,9 +10796,17 @@ const stepsTabs = document.querySelectorAll(".steps__tab");
 if (stepsTabs.length > 0) {
   const slider = new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper(".steps__slider > .swiper", {
     slidesPerView: 1,
-    effect: "fade",
-    fadeEffect: {
-      crossFade: true
+    breakpoints: {
+      320: {
+        slidesPerView: "auto",
+        spaceBetween: 30
+      },
+      577: {
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true
+        }
+      }
     }
   });
   function clearActive() {

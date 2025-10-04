@@ -1,13 +1,25 @@
 .chars {
   padding: 10rem 0;
+  @include mobile {
+    padding: 5rem 0;
+  }
   &__title {
     margin-bottom: 4rem;
+    @include mobile {
+      line-height: 120%;
+      max-width: 95%;
+      margin-bottom: 3.2rem;
+    }
   }
 
   &__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
@@ -19,10 +31,20 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 2rem;
-    border-radius: 5px;
+    border-radius: 0.5rem;
 
     &:nth-child(3) {
       grid-row: 2 span;
+      @include mobile {
+        grid-row: unset;
+        order: 5;
+      }
+    }
+
+    @include mobile {
+      padding: 2rem;
+      border-radius: 1rem;
+      min-height: 16.6rem;
     }
   }
 
@@ -33,6 +55,12 @@
     line-height: 110%;
     color: var(--pl-black);
     max-width: 50rem;
+
+    @include mobile {
+      font-size: 2.2rem;
+      line-height: 120%;
+      font-weight: 400;
+    }
   }
   &__item-value {
     margin: 0;
@@ -41,6 +69,12 @@
     line-height: 110%;
     color: var(--pl-blue);
     max-width: 50rem;
+
+    @include mobile {
+      font-size: 2.2rem;
+      line-height: 120%;
+      font-weight: 400;
+    }
   }
   &__item-icon {
     width: 4.8rem;
@@ -51,6 +85,11 @@
       width: 100%;
       height: auto;
       object-fit: contain;
+    }
+
+    @include mobile {
+      width: 4rem;
+      margin-bottom: 0;
     }
   }
   &__item-footer {
