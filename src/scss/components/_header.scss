@@ -9,6 +9,9 @@
   background-color: var(--pl-white);
   border-radius: 0 0 0.5rem 0.5rem;
   box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
+
+  transition-property: transform;
+  transition-duration: .3s;
   @include mobile {
     border-radius: 0 0 1rem 1rem;
   }
@@ -63,4 +66,7 @@
       display: block;
     }
   }
+}
+.header--hidden {
+  transform: translateY(-200%);
 }
