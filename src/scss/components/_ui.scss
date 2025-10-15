@@ -193,3 +193,7 @@
 .burger {
   @include burger;
 }
+
+.just-validate-error-label {
+  display: none;
+}

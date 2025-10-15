@@ -1,0 +1,34 @@
+{
+  "name": "form-library",
+  "version": "1.0.0",
+  "description": "Библиотека для создания форм обратной связи с кастомным скроллбаром, валидацией и переключением полей",
+  "main": "js/form-library.js",
+  "scripts": {
+    "build": "echo 'Build completed'",
+    "dev": "echo 'Development server started'"
+  },
+  "keywords": [
+    "form",
+    "validation",
+    "textarea",
+    "scrollbar",
+    "contact",
+    "ui",
+    "javascript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "just-validate": "^3.8.1",
+    "inputmask": "^5.0.8"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/form-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/form-library/issues"
+  },
+  "homepage": "https://github.com/yourusername/form-library#readme"
+}

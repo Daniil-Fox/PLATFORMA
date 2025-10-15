@@ -1,0 +1,92 @@
+<div class="modal " id="modal-price">
+  <div class="modal__body">
+    <button class="btn-reset modal__close">
+      <svg class="" width="28" height="28">
+        <use xlink:href="img/sprite.svg#close"></use>
+      </svg>
+    </button>
+    <div class="modal__content">
+      <p class="title-lg modal__title">
+        Расчитать стоимость
+      </p>
+
+      <form action="#" class="form modal-price__form">
+        <div class="form__field">
+          <div class="form__field-wrapper">
+            <input id="modal-price-volume" type="text" class="form__input input-name" name="Объем груза (количество штук)" />
+            <label class="form__label" for="modal-price-volume">Объем груза (количество штук)</label>
+          </div>
+        </div>
+        <div class="form__field ">
+          <div class="form__field-wrapper">
+            <input id="modal-price-category" type="text" class="form__input input-name" name="Категория товара" />
+            <label class="form__label" for="modal-price-category">Категория товара</label>
+          </div>
+        </div>
+        <div class="form__field form__field--long">
+          <div class="form__field-wrapper form__field-wrapper--area">
+            <textarea id="modal-price-message" class="form__input form__input--area input-mess" name="Сообщение"></textarea>
+            <label class="form__label" for="modal-price-message">Дополнительная информация</label>
+          </div>
+        </div>
+        <div class="form__field">
+          <div class="form__field-wrapper">
+            <input id="modal-price-name" type="text" class="form__input input-name" name="Имя" />
+            <label class="form__label" for="modal-price-name">Ваше имя</label>
+          </div>
+        </div>
+        <div class="form__field ">
+          <div class="form__field-wrapper">
+            <input id="modal-price-city" type="text" class="form__input input-name" name="Город" />
+            <label class="form__label" for="modal-price-city">Ваш город</label>
+          </div>
+        </div>
+        <div class="form__field">
+          <select name="Способ связи" class="visually-hidden select-contact">
+            <option value="">Выберите способ связи</option>
+            <option value="Telegram">Telegram</option>
+            <option value="Whatsapp">Whatsapp</option>
+            <option value="Email">Email</option>
+          </select>
+          <div class="dropdown form__dropdown">
+            <div class="dropdown__header">
+              <div class="dropdown__label">Куда прислать расчет стоимости?</div>
+              <div class="dropdown__capture">Whatsapp</div>
+              <div class="dropdown__btn">
+                <svg class="">
+                  <use xlink:href="img/sprite.svg#arr-down"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="dropdown__body">
+              <div class="dropdown__content">
+                <div class="dropdown__item"></div>
+                <div class="dropdown__item">Telegram</div>
+                <div class="dropdown__item">Whatsapp</div>
+                <div class="dropdown__item">Email</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form__field">
+          <div class="form__field-wrapper">
+            <input id="modal-price-tel" type="text" class="form__input input-tel" name="Телефон" style="display: block" />
+            <input id="modal-price-email" type="email" class="form__input input-email" name="Почта" style="display: none" />
+            <label class="form__label" for="modal-price-tel">телефон/почта</label>
+          </div>
+        </div>
+
+        <button class="btn btn-reset btn--accent form__btn" disabled>
+          Получить расчет стоимости
+        </button>
+      </form>
+    </div>
+
+    <div class="modal__img">
+      <picture>
+        <source srcset="./img/modal-img.webp" type="image/webp">
+        <img loading="lazy" src="./img/modal-img.jpg" class="image" width="707" height="800" alt="">
+      </picture>
+    </div>
+  </div>
+</div>
