@@ -64,14 +64,14 @@
   &__icon {
     position: absolute;
     right: 0;
-    bottom: -0.4rem;
-
+    top: 5rem;
+    width: 19rem;
+    height: 26.6rem;
     @include mobile {
       width: 20rem;
       height: 28rem;
       right: -4rem;
       top: 6.4rem;
-      bottom: unset;
     }
 
     img {

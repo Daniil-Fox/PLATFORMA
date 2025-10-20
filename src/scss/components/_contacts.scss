@@ -78,4 +78,25 @@
       height: 100%;
     }
   }
+
+  &_main {
+    padding-top: 0;
+  }
+
+  &_main &__container {
+    min-height: 75rem;
+  }
+
+  &_main &__content {
+    padding: 10rem;
+
+    @include mobile {
+      padding: 6rem 4rem;
+    }
+  }
+  &_main &__address {
+    @include mobile {
+      margin-bottom: 4rem;
+    }
+  }
 }

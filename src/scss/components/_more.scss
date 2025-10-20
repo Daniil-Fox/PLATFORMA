@@ -54,11 +54,11 @@
     @include mobile {
       border-radius: 1rem;
     }
-    img {
+    img,
+    video {
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: contain;
     }
   }
 }

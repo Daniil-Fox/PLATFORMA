@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      <div class="main-top">
+        <div class="container">
+          <a href="/../" class="back-btn link-btn">
+            <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.5 1.60352L1.5 7.60352L7.5 13.6035" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Назад
+          </a>
+        </div>
+      </div>
+      <section class="contacts contacts_main">
+        <div class="container">
+          <div class="contacts__container">
+            <div class="contacts__content">
+              <h2 class="title-lg contacts__title">Контакты</h2>
+
+              <address class="contacts__address address">
+                <div class="address__item">
+                  <div>
+                    <a href="tel:89146800754" class="link-btn address__link">8 914 680 07 54</a>
+                  </div>
+                  <div>
+                    <a href="tel:84232054084" class="link-btn address__link">8 423 205 40 84</a>
+                  </div>
+                </div>
+                <div class="address__item">
+                  <a href="mailto:sales@plforma.pro" class="link-btn address__link">sales@plforma.pro</a>
+                </div>
+                <div class="address__item">
+                  <p>
+                    Приморский край, Надеждинский р-н,<br>
+                    c. Вольно-Надеждинское,<br>
+                    тер. Опережающего Развития Приморье.
+                  </p>
+                </div>
+              </address>
+              <div class="contacts__socials">
+                <ul class="socials list-reset">
+                  <li>
+                    <a href="#" target="_blank">
+                      <img src="./img/wa.svg" alt="">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank">
+                      <img src="./img/tg.svg" alt="">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank">
+                      <img src="./img/vk.svg" alt="">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank">
+                      <img src="./img/youtube.svg" alt="">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank">
+                      <img src="./img/inst.svg" alt="">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="contacts__map">
+              <div id="map"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <script>
+        ymaps.ready(function () {
+          var salesCoords = [43.339509, 131.990174];
+          var myMap = new ymaps.Map("map", {
+            center: salesCoords,
+            zoom: 16,
+          }, {
+            searchControlProvider: "yandex#search"
+          });
+          var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
+            iconLayout: "default#image",
+            iconImageHref: "./img/svg/placemark.svg",
+            iconImageSize: [50, 50],
+            iconImageOffset: [-25, -50],
+          });
+          myMap.geoObjects.add(myPlacemark);
+          myMap.controls.remove("geolocationControl");
+          myMap.controls.remove("searchControl");
+          myMap.controls.remove("trafficControl");
+          myMap.controls.remove("typeSelector");
+          myMap.controls.remove("fullscreenControl");
+          myMap.controls.remove("zoomControl");
+          myMap.controls.remove("rulerControl");
+        });
+      </script>
+
+
+    </main>
+    @include('partials/modal-price.html')
+    @include('partials/modal-callback.html')
+    @include('partials/modal-success.html')
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>

@@ -178,6 +178,9 @@
   justify-content: center;
   background-color: var(--pl-white);
   padding-left: 1rem;
+
+  transition-property: transform, opacity;
+  transition-duration: 0.2s;
   svg {
     width: 50%;
     height: 50%;
@@ -189,6 +192,12 @@
     height: 6.4rem;
     top: 57.5%;
   }
+
+  &.hidden {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    pointer-events: none;
+  }
 }
 .burger {
   @include burger;
@@ -196,4 +205,54 @@
 
 .just-validate-error-label {
   display: none;
+}
+
+.video-progress {
+  position: absolute;
+  right: 7rem;
+  bottom: 5rem;
+  width: 27.4rem;
+  height: 1.3rem;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.video-progress-track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background-color: var(--pl-white);
+  transition-property: transform;
+  transition-timing-function: linear;
+  transition-duration: .15s;
+}
+
+.main-top {
+  padding-top: 15.4rem;
+  padding-bottom: 5.4rem;
+
+  @include mobile {
+    padding-top: 13rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 1.3rem;
+  font-weight: 500;
+  font-size: 2.2rem;
+  line-height: 120%;
+  color: #000512;
+  svg {
+    width: 1rem;
+    height: 1.5rem;
+    stroke: currentColor;
+  }
 }

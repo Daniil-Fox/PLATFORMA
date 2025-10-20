@@ -29,20 +29,100 @@ export const validateForms = (selector, rules, checkboxes = [], afterSend) => {
   validation.onSuccess((ev) => {
     let formData = new FormData(ev.target);
 
+    // Добавляем класс загрузки к форме
+    const formElement = ev.target;
+    formElement.classList.add('form--loading');
+
+    // Создаем элемент загрузки
+    const loadingElement = document.createElement('div');
+    loadingElement.className = 'form__loading';
+    loadingElement.innerHTML = `
+      <div class="form__spinner"></div>
+      <div class="form__loading-text">Отправляем...</div>
+    `;
+
+    // Добавляем элемент загрузки в форму
+    formElement.appendChild(loadingElement);
+
+    // Блокируем кнопку отправки
+    const submitBtn = formElement.querySelector('.form__btn');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.6';
+      submitBtn.style.cursor = 'not-allowed';
+    }
+
+    // Активируем эффекты загрузки с небольшой задержкой для плавности
+    setTimeout(() => {
+      formElement.classList.add('form--loading-active');
+      loadingElement.classList.add('form__loading--active');
+    }, 50);
+
     let xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
+        // Скрываем эффекты загрузки
+        setTimeout(() => {
+          formElement.classList.remove('form--loading-active');
+          loadingElement.classList.remove('form__loading--active');
+
+          // Разблокируем кнопку отправки
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '';
+            submitBtn.style.cursor = '';
+          }
+
+          // Удаляем элементы после завершения анимации
+          setTimeout(() => {
+            formElement.classList.remove('form--loading');
+            if (loadingElement.parentNode) {
+              loadingElement.remove();
+            }
+          }, 300);
+        }, 500); // Небольшая задержка для демонстрации эффекта
+
         if (xhr.status === 200) {
           if (afterSend) {
             afterSend();
           }
           console.log("Отправлено");
+
+          // Показываем модальное окно успеха
+          showSuccessModal();
+        } else {
+          console.error("Ошибка отправки формы");
         }
       }
     };
+
+    // Обработка ошибок сети
+    xhr.onerror = function() {
+      setTimeout(() => {
+        formElement.classList.remove('form--loading-active');
+        loadingElement.classList.remove('form__loading--active');
+
+        // Разблокируем кнопку отправки
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '';
+          submitBtn.style.cursor = '';
+        }
+
+        setTimeout(() => {
+          formElement.classList.remove('form--loading');
+          if (loadingElement.parentNode) {
+            loadingElement.remove();
+          }
+        }, 300);
+      }, 500);
+
+      console.error("Ошибка сети при отправке формы");
+    };
+
     const path =
-      location.origin + "/wp-content/themes/peremena/assets/mail.php";
+      location.origin + "/wp-content/themes/platforma/assets/mail.php";
     xhr.open("POST", path, true);
     xhr.send(formData);
     form
@@ -336,3 +416,31 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+/**
+ * Функция для показа модального окна успешной отправки
+ */
+function showSuccessModal() {
+  // Закрываем все открытые модальные окна
+  const openModals = document.querySelectorAll('.modal.modal--active');
+  openModals.forEach(modal => {
+    modal.classList.remove('modal--active');
+  });
+
+  // Показываем модальное окно успеха
+  const successModal = document.getElementById('modal-success');
+  if (successModal) {
+    // Небольшая задержка для плавного перехода
+    setTimeout(() => {
+      successModal.classList.add('modal--active');
+    }, 100);
+
+    // Обработчик для кнопки "Отлично"
+    const successBtn = successModal.querySelector('.modal-success__btn');
+    if (successBtn) {
+      successBtn.addEventListener('click', () => {
+        successModal.classList.remove('modal--active');
+      });
+    }
+  }
+}

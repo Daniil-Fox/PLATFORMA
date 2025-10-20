@@ -7,6 +7,7 @@ import { FormInputs } from "./components/inputs.js";
 import "./functions/validate-forms.js";
 import {CustomTextarea} from "./components/textarea.js";
 import "./components/modal.js";
+import "./components/fancy.js";
 
 // Инициализация кастомных textarea
 document.addEventListener("DOMContentLoaded", () => {

@@ -156,4 +156,90 @@
     grid-column: 2 span;
     padding: 2.3rem 3rem;
   }
+
+  // Эффекты загрузки формы
+  &--loading {
+    position: relative;
+
+    // Блюр эффект
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(2px);
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    &.form--loading-active::before {
+      opacity: 1;
+    }
+  }
+
+  // Контейнер для анимации загрузки
+  &__loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &.form__loading--active {
+      opacity: 1;
+    }
+  }
+
+  // Стили для спиннера загрузки
+  &__spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #333;
+    border-radius: 50%;
+    animation: form-spin 1s linear infinite;
+    margin: 0 auto; // Центрируем спиннер
+
+    @include mobile {
+      width: 30px;
+      height: 30px;
+      border-width: 2px;
+    }
+  }
+
+  // Текст загрузки
+  &__loading-text {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    white-space: nowrap; // Предотвращаем перенос текста
+
+    @include mobile {
+      font-size: 12px;
+      margin-top: 8px;
+    }
+  }
+}
+
+// Анимация вращения спиннера
+@keyframes form-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
