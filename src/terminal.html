@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      <section class="mark-hero">
+        <div class="mark-hero__video-wrapper">
+          <div class="mark-hero__video-poster">
+            <picture>
+              <source srcset="./img/terminal-mob.webp" type="image/webp" media="(max-width: 576px)">
+              <source srcset="./img/terminal-hero.webp" type="image/webp">
+              <img loading="lazy" src="./img/terminal-hero.jpg" class="image" width="1920" height="1000" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="container mark-hero__container">
+          <div class="mark-hero__content">
+            <h1 class="mark-hero__title">Терминальная
+              обработка<br>
+              и&nbsp;хранение грузов</h1>
+            <button class="btn-reset btn btn_big mark-hero__btn" data-target="modal-price">
+              Рассчитать стоимость
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="storage">
+        <div class="container">
+          <h2 class="title-lg storage__title storage__title_mb">Преимущества</h2>
+
+          <div class="storage__container">
+            <div class="storage__item storage__item_tall">
+              <p class="storage__item-title">
+                Скорость терминальной<br>
+                обработки
+              </p>
+
+              <div class="storage__item-footer">
+                <p class="storage__item-value">
+                  Высокая
+                </p>
+
+                <div class="storage__item-icon">
+                  <img src="./img/storage/01.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+            <div class="storage__item storage__item_tall">
+              <p class="storage__item-title">Система управления<br>
+                процессами на&nbsp;складе
+              </p>
+
+              <div class="storage__item-footer">
+                <p class="storage__item-value">
+                  Автоматизированная
+                </p>
+
+                <div class="storage__item-icon">
+                  <img src="./img/storage/02.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="storage__item storage__item_tall">
+              <p class="storage__item-title">
+                ПО&nbsp;для&nbsp;оперативного проведения<br>
+                маркировки товаров
+              </p>
+
+              <div class="storage__item-footer">
+                <p class="storage__item-value">
+                  Собственное
+                </p>
+
+                <div class="storage__item-icon">
+                  <img src="./img/storage/03.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+            <div class="storage__item storage__item_tall">
+              <p class="storage__item-title">Месторасположение</p>
+
+              <div class="storage__item-footer">
+                <p class="storage__item-value">
+                  Вблизи основных<br>
+                  узловых ЖД&nbsp;станций
+                </p>
+
+                <div class="storage__item-icon">
+                  <img src="./img/storage/04.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+            <div class="storage__item storage__item_tall">
+              <p class="storage__item-title">
+                Транспортная доступность
+              </p>
+
+              <div class="storage__item-footer">
+                <p class="storage__item-value">
+                  Полноценная
+                </p>
+
+                <div class="storage__item-icon">
+                  <img src="./img/storage/05.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+            <div class="storage__item storage__item_tall">
+              <p class="storage__item-title">
+                Ценовая политика
+              </p>
+
+              <div class="storage__item-footer">
+                <p class="storage__item-value">
+                  Гибкая
+                </p>
+
+                <div class="storage__item-icon">
+                  <img src="./img/storage/06.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      @include('partials/stock.html')
+
+      <section class="steps steps_storage">
+        <div class="steps__container">
+          <div class="steps__content">
+            <h2 class="title-xl steps__title">Услуги склада</h2>
+
+            <div class="steps__tabs">
+              <div class="steps__tab active">
+                <button class="steps__tab-btn btn-reset">
+                  Хранение и обработка
+                </button>
+                <div class="steps__tab-desc desc" style="max-height: unset;">
+                  <p>
+                    Негабаритного груза<br>
+                    Генерального груза<br>
+                    Груженных и&nbsp;порожних<br>
+                    контейнеров
+                  </p>
+                </div>
+              </div>
+              <div class="steps__tab">
+                <button class="steps__tab-btn btn-reset">Операции с грузом </button>
+                <div class="steps__tab-desc desc">
+                  <p>
+                    Прием, перегруз,
+                    сортировка, упаковка,
+                    крепление по&nbsp;ТУ
+                  </p>
+                </div>
+              </div>
+              <div class="steps__tab">
+                <button class="steps__tab-btn btn-reset">
+                  Авто и&nbsp;спец. техника
+                </button>
+                <div class="steps__tab-desc desc">
+                  <p>
+                    Крепление/раскрепление
+                    в&nbsp;контейнере
+                  </p>
+                  <p>
+                    Хранение
+                  </p>
+                </div>
+              </div>
+              <div class="steps__tab">
+                <button class="steps__tab-btn btn-reset">Маркировка</button>
+                <div class="steps__tab-desc desc">
+                  <p>
+                    По системе<br>
+                    Честный знак
+                  </p>
+                </div>
+              </div>
+              <div class="steps__tab">
+                <button class="steps__tab-btn btn-reset">Отчеты</button>
+                <div class="steps__tab-desc desc">
+                  <p>
+                    Формирование фото/видео отчета,
+                    актов погрузки/выгрузки,
+                    пересчета грузовых мест
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="steps__slider">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide steps__item">
+                  <div class="steps__tab steps__tab_mob">
+                    <div class="steps__tab-btn btn-reset"><span>1</span> Хранение и обработка</div>
+                    <div class="steps__tab-desc desc">
+                      <p>
+                        Негабаритного груза<br>
+                        Генерального груза<br>
+                        Груженных и&nbsp;порожних<br>
+                        контейнеров
+                      </p>
+                    </div>
+                  </div>
+                  <div class="steps__video" data-video-wrapper>
+                    <video src="./cover.mp4" poster="./img/steps-terminal/01.webp"></video>
+                    <button class="btn-reset video-play steps__play" data-video-play>
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#play"></use>
+                      </svg>
+                    </button>
+
+                    <div class="video-progress">
+                      <div class="video-progress-track"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide steps__item">
+                  <div class="steps__tab steps__tab_mob">
+                    <div class="steps__tab-btn btn-reset"><span>2</span> Операции с грузом</div>
+                    <div class="steps__tab-desc desc">
+                      <p>
+                        Прием, перегруз,
+                        сортировка, упаковка,
+                        крепление по&nbsp;ТУ
+                      </p>
+                    </div>
+                  </div>
+                  <div class="steps__video" data-video-wrapper>
+                    <video src="./cover.mp4" poster="./img/steps-terminal/02.webp"></video>
+                    <button class="btn-reset video-play steps__play" data-video-play>
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#play"></use>
+                      </svg>
+                    </button>
+                    <div class="video-progress">
+                      <div class="video-progress-track"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide steps__item">
+                  <div class="steps__tab steps__tab_mob">
+                    <div class="steps__tab-btn btn-reset"><span>3</span> Авто и&nbsp;спец. техника</div>
+                    <div class="steps__tab-desc desc">
+                      <p>Крепление/раскрепление в&nbsp;контейнере</p>
+                      <p>Хранение</p>
+                    </div>
+                  </div>
+                  <div class="steps__video" data-video-wrapper>
+                    <video src="./cover.mp4" poster="./img/steps-terminal/03.webp"></video>
+                    <button class="btn-reset video-play steps__play" data-video-play>
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#play"></use>
+                      </svg>
+                    </button>
+                    <div class="video-progress">
+                      <div class="video-progress-track"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide steps__item">
+                  <div class="steps__tab steps__tab_mob">
+                    <div class="steps__tab-btn btn-reset"><span>4</span> Маркировка</div>
+                    <div class="steps__tab-desc desc">
+                      <p>
+                        По системе<br>
+                        Честный знак
+                      </p>
+                    </div>
+                  </div>
+                  <div class="steps__video" data-video-wrapper>
+                    <video src="./cover.mp4" poster="./img/steps-terminal/04.webp"></video>
+                    <button class="btn-reset video-play steps__play" data-video-play>
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#play"></use>
+                      </svg>
+                    </button>
+                    <div class="video-progress">
+                      <div class="video-progress-track"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide steps__item">
+                  <div class="steps__tab steps__tab_mob">
+                    <div class="steps__tab-btn btn-reset"><span>5</span> Отчеты</div>
+                    <div class="steps__tab-desc desc">
+                      <p>
+                        Формирование фото/видео отчета,
+                        актов погрузки/выгрузки,
+                        пересчета грузовых мест
+                      </p>
+                    </div>
+                  </div>
+                  <div class="steps__video" data-video-wrapper>
+                    <video src="./cover.mp4" poster="./img/steps-terminal/04.webp"></video>
+                    <button class="btn-reset video-play steps__play" data-video-play>
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#play"></use>
+                      </svg>
+                    </button>
+                    <div class="video-progress">
+                      <div class="video-progress-track"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @include('partials/infra.html')
+
+      <section class="chars">
+        <div class="container">
+          <h2 class="title-lg chars__title">
+            Технические характеристики
+          </h2>
+
+
+          <div class="chars__container chars__container_storage">
+            <div class="chars__item">
+              <p class="chars__item-title"> Таможенный склад</p>
+
+              <div class="chars__item-footer">
+                <p class="chars__item-value">
+                  4500 м<sup>2</sup>
+                </p>
+
+                <div class="chars__item-icon">
+                  <img src="./img/chars/01.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+            <div class="chars__item">
+              <p class="chars__item-title">Вместимость таможенного склада</p>
+
+              <div class="chars__item-footer">
+                <p class="chars__item-value">
+                  400 TEU
+                </p>
+
+                <div class="chars__item-icon">
+                  <img src="./img/chars/02.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="chars__item">
+              <p class="chars__item-title">Без&nbsp;обедов и&nbsp;выходных </p>
+
+              <div class="chars__item-footer">
+                <p class="chars__item-value">
+                  8:00 - 20:00
+                </p>
+
+                <div class="chars__item-icon">
+                  <img src="./img/chars/03.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+            <div class="chars__item chars__item_big-icon">
+              <p class="chars__item-title">Круглосуточная охрана и видеонаблюдение</p>
+
+              <div class="chars__item-footer">
+                <p class="chars__item-value">
+                  24 / 7
+                </p>
+
+                <div class="chars__item-icon">
+                  <img src="./img/chars/04.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+
+      @include('partials/more.html')
+      @include('partials/blog.html')
+      @include('partials/contacts.html')
+    </main>
+    @include('partials/modal-price.html')
+    @include('partials/modal-callback.html')
+    @include('partials/modal-success.html')
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>

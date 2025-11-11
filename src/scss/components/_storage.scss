@@ -68,6 +68,13 @@
     }
   }
 
+  &__title_mb {
+    margin-bottom: 6rem;
+    @include mobile {
+      margin-bottom: 5rem;
+    }
+  }
+
   &__img {
     border-radius: 0.5rem;
     overflow: hidden;
@@ -147,6 +154,17 @@
       &:last-child:nth-child(odd) {
         flex-basis: 100% !important;
         order: 10;
+      }
+    }
+
+    &_tall {
+      min-height: 30rem;
+      @include mobile {
+        min-height: 22rem;
+      }
+      .storage__item-icon {
+        width: 5.6rem;
+        height: 5.6rem;
       }
     }
   }

@@ -18214,6 +18214,16 @@ document.addEventListener("DOMContentLoaded", () => {
           initMask();
         }
       }
+
+      // Обновляем атрибут for у лейбла для активного инпута
+      updateLabelFor();
+    }
+    function updateLabelFor() {
+      if (!contactLabel) return;
+      const activeInput = telInput?.style.display !== "none" ? telInput : emailInput;
+      if (activeInput) {
+        contactLabel.setAttribute("for", activeInput.id);
+      }
     }
     function getRules() {
       const selected = select?.value;

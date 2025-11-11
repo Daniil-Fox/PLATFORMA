@@ -47,6 +47,25 @@
       min-height: 16.6rem;
     }
   }
+  &__container_storage {
+    grid-template-columns: 1fr 1fr;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__container_storage &__item {
+    &-title {
+      max-width: 100%;
+    }
+    &:nth-child(3) {
+      grid-row: unset;
+
+      @include mobile {
+        order: unset;
+      }
+    }
+  }
 
   &__item-title {
     margin: 0;

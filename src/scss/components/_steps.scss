@@ -69,7 +69,7 @@
       line-height: 130%;
       color: var(--pl-black);
       margin-right: 1.3rem;
-
+      vertical-align: top;
       transition-property: color;
       transition-duration: 0.3s;
       transition-timing-function: ease;
@@ -78,12 +78,11 @@
         display: none;
       }
     }
-
-
   }
 
   &__tab-btn {
     display: inline-block;
+    text-align: left;
     font-weight: 500;
     font-size: 2.8rem;
     line-height: 130%;
@@ -104,6 +103,8 @@
       }
     }
     @include mobile {
+      display: flex;
+      align-items: flex-start;
       font-size: 2.4rem;
       line-height: 150%;
       font-weight: 600;
@@ -248,6 +249,25 @@
       .steps__tab-btn {
         color: var(--pl-blue);
       }
+    }
+  }
+}
+
+.steps_storage {
+  @include mobile {
+    .steps__item {
+      display: flex;
+      gap: 4rem;
+      flex-direction: column;
+    }
+    .steps__tab_mob {
+      mask-image: url("./../img/svg/steps-content-mob-storage.svg");
+      height: 31rem;
+    }
+    .steps__video {
+      mask-size: cover;
+      mask-position: top;
+      border-radius: 0 0 1rem 1rem;
     }
   }
 }

@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>Platforma</title>
+  <link rel="preload" href="fonts/AVFontimer-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/AVFontimer-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/AVFontimer-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/AVFontimer-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/AVFontimer-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Ubuntu-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="js/main.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=221cbec3-01c0-4b1a-8417-d7d65e719c35&lang=ru_RU"
+    type="text/javascript"></script>
+</head>
+
+
+<body class="page__body">
+  <div class="site-container">
+    <header class="header">
+  <div class="container">
+    <div class="header__container">
+      <a href="./" class="header__logo">
+        <img src="./img/svg/logo.svg" alt="">
+      </a>
+      <a href="./" class="header__logo header__logo_mob">
+        <img src="./img/svg/logo-mob.svg" alt="">
+      </a>
+
+      <nav class="header__nav nav">
+        <ul>
+          <li>
+            <a href="#">Цифровая маркировка</a>
+          </li>
+          <li>
+            <a href="#">Таможенный склад</a>
+          </li>
+          <li>
+            <a href="#">Терминал</a>
+          </li>
+          <li>
+            <a href="#">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="btn-reset btn btn_small header__btn" data-target="modal-callback">
+        Оставить заявку
+      </button>
+
+      <button class="btn-reset burger header__burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
+        <span class="burger__line"></span>
+      </button>
+
+      <div class="menu" data-menu>
+  <div class="menu__overlay" data-menu-overlay></div>
+  <div class="menu__content">
+    <nav class="menu__nav nav">
+      <ul>
+        <li>
+          <a href="#digital" data-menu-item>Цифровая маркировка</a>
+        </li>
+        <li>
+          <a href="#storage" data-menu-item>Таможенный склад</a>
+        </li>
+        <li>
+          <a href="#terminal" data-menu-item>Терминал</a>
+        </li>
+        <li>
+          <a href="#contacts" data-menu-item>Контакты</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="menu__footer">
+      <a href="#" class="btn btn-reset menu__btn">Оставить заявку</a>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</header>
+
+    <main class="main">
+      <section class="mark-hero">
+        <div class="mark-hero__video-wrapper">
+          <div class="mark-hero__video-poster">
+            <picture>
+              <source srcset="./img/mark-mob.webp" type="image/webp" media="(max-width: 576px)">
+              <source srcset="./img/storage-hero.webp" type="image/webp">
+              <img loading="lazy" src="./img/storage-hero.jpg" class="image" width="1920" height="1000" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="container mark-hero__container">
+          <div class="mark-hero__content">
+            <h1 class="mark-hero__title">Маркировка товаров на&nbsp;таможенном складе</h1>
+            <button class="btn-reset btn btn_big mark-hero__btn" data-target="modal-price">
+              Рассчитать стоимость
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="storage">
+        <div class="container">
+          <h2 class="title-lg storage__title storage__title_mb">Преимущества</h2>
+
+          <div class="storage__container">
+            <div class="storage__item storage__item_tall">
+              <p class="storage__item-title">
+                Скорость терминальной<br>
+                обработки
+              </p>
+
+              <div class="storage__item-footer">
+                <p class="storage__item-value">
+                  Высокая
+                </p>
+
+                <div class="storage__item-icon">
+                  <img src="./img/storage/01.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+            <div class="storage__item storage__item_tall">
+              <p class="storage__item-title">Система управления<br>
+                процессами на&nbsp;складе
+              </p>
+
+              <div class="storage__item-footer">
+                <p class="storage__item-value">
+                  Автоматизированная
+                </p>
+
+                <div class="storage__item-icon">
+                  <img src="./img/storage/02.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="storage__item storage__item_tall">
+              <p class="storage__item-title">
+                ПО&nbsp;для&nbsp;оперативного проведения<br>
+                маркировки товаров
+              </p>
+
+              <div class="storage__item-footer">
+                <p class="storage__item-value">
+                  Собственное
+                </p>
+
+                <div class="storage__item-icon">
+                  <img src="./img/storage/03.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+            <div class="storage__item storage__item_tall">
+              <p class="storage__item-title">Месторасположение</p>
+
+              <div class="storage__item-footer">
+                <p class="storage__item-value">
+                  Вблизи основных<br>
+                  узловых ЖД&nbsp;станций
+                </p>
+
+                <div class="storage__item-icon">
+                  <img src="./img/storage/04.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+            <div class="storage__item storage__item_tall">
+              <p class="storage__item-title">
+                Транспортная доступность
+              </p>
+
+              <div class="storage__item-footer">
+                <p class="storage__item-value">
+                  Полноценная
+                </p>
+
+                <div class="storage__item-icon">
+                  <img src="./img/storage/05.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+            <div class="storage__item storage__item_tall">
+              <p class="storage__item-title">
+                Ценовая политика
+              </p>
+
+              <div class="storage__item-footer">
+                <p class="storage__item-value">
+                  Гибкая
+                </p>
+
+                <div class="storage__item-icon">
+                  <img src="./img/storage/06.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="stock">
+  <div class="stock__wrapper">
+    <div class="stock__img">
+      <picture>
+        <source srcset="./img/stock-mob.webp" type="image/webp" media="(max-width: 576px)">
+        <source srcset="./img/stock.webp" type="image/webp">
+        <img loading="lazy" src="./img/stock.jpg" class="image" width="1920" height="500" alt="">
+      </picture>
+    </div>
+    <div class="stock__content-wrapper">
+      <div class="stock__content">
+        <div class="stock__text">
+          <h2 class="title-lg stock__title">Акция</h2>
+          <p class="desc stock__desc">
+            Хранение на складе<br>
+            в&nbsp;период маркировки БЕСПЛАТНО!
+          </p>
+          <button class="btn-reset btn btn_big stock__btn">Оставить заявку</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <section class="steps steps_storage">
+        <div class="steps__container">
+          <div class="steps__content">
+            <h2 class="title-xl steps__title">Услуги склада</h2>
+
+            <div class="steps__tabs">
+              <div class="steps__tab active">
+                <button class="steps__tab-btn btn-reset">
+                  Перемещение<br>
+                  на&nbsp;таможенный склад
+                </button>
+                <div class="steps__tab-desc desc" style="max-height: unset;">
+                  <p>
+                    Под процедуру &laquo;Импорт&nbsp;70&raquo; независимо от&nbsp;места прибытия груза
+                  </p>
+                </div>
+              </div>
+              <div class="steps__tab">
+                <button class="steps__tab-btn btn-reset">Хранение товаров </button>
+                <div class="steps__tab-desc desc">
+                  <p>
+                    На&nbsp;складе,
+                    сертифицированном<br>
+                    для работы с&nbsp;таможенными
+                    процедурами.
+                  </p>
+                </div>
+              </div>
+              <div class="steps__tab">
+                <button class="steps__tab-btn btn-reset">
+                  Таможенное<br>
+                  оформление товаров</button>
+                <div class="steps__tab-desc desc">
+                  <p>
+                    С&nbsp;подачей на&nbsp;Балтийские ЦЭДы
+                  </p>
+                </div>
+              </div>
+              <div class="steps__tab">
+                <button class="steps__tab-btn btn-reset">Маркировка
+                  товаров</button>
+                <div class="steps__tab-desc desc">
+                  <p>
+                    По системе<br>
+                    Честный знак
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="steps__slider">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide steps__item">
+                  <div class="steps__tab steps__tab_mob">
+                    <div class="steps__tab-btn btn-reset"><span>1</span> Перемещение на&nbsp;таможенный склад</div>
+                    <div class="steps__tab-desc desc">
+                      <p>
+                        Под процедуру &laquo;Импорт&nbsp;70&raquo; независимо от&nbsp;места прибытия груза
+                      </p>
+                    </div>
+                  </div>
+                  <div class="steps__video" data-video-wrapper>
+                    <video src="./cover.mp4" poster="./img/steps-storage/01.webp"></video>
+                    <button class="btn-reset video-play steps__play" data-video-play>
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#play"></use>
+                      </svg>
+                    </button>
+
+                    <div class="video-progress">
+                      <div class="video-progress-track"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide steps__item">
+                  <div class="steps__tab steps__tab_mob">
+                    <div class="steps__tab-btn btn-reset"><span>1</span> Хранение товаров</div>
+                    <div class="steps__tab-desc desc">
+                      <p>
+                        На&nbsp;складе, сертифицированном<br>
+                        для работы с&nbsp;таможенными процедурами.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="steps__video" data-video-wrapper>
+                    <video src="./cover.mp4" poster="./img/steps-storage/02.webp"></video>
+                    <button class="btn-reset video-play steps__play" data-video-play>
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#play"></use>
+                      </svg>
+                    </button>
+                    <div class="video-progress">
+                      <div class="video-progress-track"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide steps__item">
+                  <div class="steps__tab steps__tab_mob">
+                    <div class="steps__tab-btn btn-reset"><span>1</span> Таможенное оформление товаров</div>
+                    <div class="steps__tab-desc desc">
+                      <p>
+                        С&nbsp;подачей на&nbsp;Балтийские ЦЭДы
+                      </p>
+                    </div>
+                  </div>
+                  <div class="steps__video" data-video-wrapper>
+                    <video src="./cover.mp4" poster="./img/steps-storage/03.webp"></video>
+                    <button class="btn-reset video-play steps__play" data-video-play>
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#play"></use>
+                      </svg>
+                    </button>
+                    <div class="video-progress">
+                      <div class="video-progress-track"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide steps__item">
+                  <div class="steps__tab steps__tab_mob">
+                    <div class="steps__tab-btn btn-reset"><span>1</span> Маркировка товаров</div>
+                    <div class="steps__tab-desc desc">
+                      <p>
+                        По системе<br>
+                        Честный знак
+                      </p>
+                    </div>
+                  </div>
+                  <div class="steps__video" data-video-wrapper>
+                    <video src="./cover.mp4" poster="./img/steps-storage/04.webp"></video>
+                    <button class="btn-reset video-play steps__play" data-video-play>
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#play"></use>
+                      </svg>
+                    </button>
+                    <div class="video-progress">
+                      <div class="video-progress-track"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="infra">
+  <div class="container">
+    <h2 class="title-lg infra__title">
+      Инфраструктура
+    </h2>
+  </div>
+  <div class="infra__slider">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="infra__img">
+            <picture>
+              <source srcset="./img/infra/01-mob.webp" type="image/webp" media="(max-width: 576px)">
+              <source srcset="./img/infra/01.webp" type="image/webp">
+              <img loading="lazy" src="./img/infra/01.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="infra__img">
+            <picture>
+              <source srcset="./img/infra/02-mob.webp" type="image/webp" media="(max-width: 576px)">
+              <source srcset="./img/infra/02.webp" type="image/webp">
+              <img loading="lazy" src="./img/infra/02.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="infra__img">
+            <picture>
+              <source srcset="./img/infra/03-mob.webp" type="image/webp" media="(max-width: 576px)">
+              <source srcset="./img/infra/03.webp" type="image/webp">
+              <img loading="lazy" src="./img/infra/03.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <section class="chars">
+        <div class="container">
+          <h2 class="title-lg chars__title">
+            Технические характеристики
+          </h2>
+
+
+          <div class="chars__container chars__container_storage">
+            <div class="chars__item">
+              <p class="chars__item-title"> Таможенный склад</p>
+
+              <div class="chars__item-footer">
+                <p class="chars__item-value">
+                  4500 м<sup>2</sup>
+                </p>
+
+                <div class="chars__item-icon">
+                  <img src="./img/chars/01.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+            <div class="chars__item">
+              <p class="chars__item-title">Вместимость таможенного склада</p>
+
+              <div class="chars__item-footer">
+                <p class="chars__item-value">
+                  400 TEU
+                </p>
+
+                <div class="chars__item-icon">
+                  <img src="./img/chars/02.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="chars__item">
+              <p class="chars__item-title">Без&nbsp;обедов и&nbsp;выходных </p>
+
+              <div class="chars__item-footer">
+                <p class="chars__item-value">
+                  8:00 - 20:00
+                </p>
+
+                <div class="chars__item-icon">
+                  <img src="./img/chars/03.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+            <div class="chars__item chars__item_big-icon">
+              <p class="chars__item-title">Круглосуточная охрана и видеонаблюдение</p>
+
+              <div class="chars__item-footer">
+                <p class="chars__item-value">
+                  24 / 7
+                </p>
+
+                <div class="chars__item-icon">
+                  <img src="./img/chars/04.svg" alt="Иконка Ценовая политика">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="more">
+  <div class="container">
+    <div class="more__header">
+      <div class="more__text">
+        <h2 class="more__title title-lg">Вопросы и ответы</h2>
+        <p class="desc more__desc">
+          Больше информации в наших соц. сетях
+        </p>
+      </div>
+
+      <ul class="more__socials socials list-reset">
+        <li>
+          <a href="#" target="_blank">
+            <img src="./img/vk.svg" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img src="./img/youtube.svg" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img src="./img/inst.svg" alt="">
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <div class="more__slider">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="more__img">
+            <picture>
+              <source srcset="./img/more/01.webp" type="image/webp">
+              <img loading="lazy" src="./img/more/01.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="more__img">
+            <picture>
+              <source srcset="./img/more/02.webp" type="image/webp">
+              <img loading="lazy" src="./img/more/02.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="more__img">
+            <picture>
+              <source srcset="./img/more/03.webp" type="image/webp">
+              <img loading="lazy" src="./img/more/03.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="more__img">
+            <picture>
+              <source srcset="./img/more/04.webp" type="image/webp">
+              <img loading="lazy" src="./img/more/04.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="more__img">
+            <picture>
+              <source srcset="./img/more/05.webp" type="image/webp">
+              <img loading="lazy" src="./img/more/05.png" class="image" width="585" height="593" alt="">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="blog">
+  <div class="container">
+    <h2 class="title-lg blog__title">Статьи</h2>
+
+    <div class="blog__container">
+      <article class="blog__item">
+        <a href="#" class="blog__link"></a>
+        <div class="blog__item-img">
+          <img src="./img/blog/01.webp" alt="">
+        </div>
+        <div class="blog__item-content">
+          <h5 class="blog__item-title">
+            Что&nbsp;такое «Честный знак» и&nbsp;зачем нужна маркировка товаров в&nbsp;России?
+          </h5>
+        </div>
+      </article>
+      <article class="blog__item">
+        <a href="#" class="blog__link"></a>
+        <div class="blog__item-img">
+          <img src="./img/blog/02.webp" alt="">
+        </div>
+        <div class="blog__item-content">
+          <h5 class="blog__item-title">
+            Пошаговое руководство по&nbsp;внедрению маркировки для&nbsp;бизнеса
+          </h5>
+        </div>
+      </article>
+      <article class="blog__item">
+        <a href="#" class="blog__link"></a>
+        <div class="blog__item-img">
+          <img src="./img/blog/03.webp" alt="">
+        </div>
+        <div class="blog__item-content">
+          <h5 class="blog__item-title">
+            ТОП-5&nbsp;ошибок при&nbsp;работе с&nbsp;маркировкой
+            и&nbsp;как&nbsp;их избежать
+          </h5>
+        </div>
+      </article>
+    </div>
+
+    <div class="blog__bottom centered">
+      <a href="#" class="btn btn-reset btn_white blog__btn">Все статьи</a>
+    </div>
+  </div>
+
+</section>
+      <section class="contacts">
+  <div class="container">
+    <div class="contacts__container">
+      <div class="contacts__content">
+        <h2 class="title-lg contacts__title">Контакты</h2>
+
+        <address class="contacts__address address">
+          <div class="address__item">
+            <div>
+              <a href="tel:89146800754" class="link-btn address__link">8 914 680 07 54</a>
+            </div>
+            <div>
+              <a href="tel:84232054084" class="link-btn address__link">8 423 205 40 84</a>
+            </div>
+          </div>
+          <div class="address__item">
+            <a href="mailto:sales@plforma.pro" class="link-btn address__link">sales@plforma.pro</a>
+          </div>
+          <div class="address__item">
+            <p>
+              Приморский край, Надеждинский р-н,<br>
+              c. Вольно-Надеждинское,<br>
+              тер. Опережающего Развития Приморье.
+            </p>
+          </div>
+        </address>
+
+        <button class="btn btn-reset btn_big contacts__btn">Оставить заявку</button>
+      </div>
+
+      <div class="contacts__map">
+        <div id="map"></div>
+      </div>
+      <button class="btn btn-reset btn_big contacts__btn contacts__btn_mob">Оставить заявку</button>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  ymaps.ready(function () {
+    var salesCoords = [43.339509, 131.990174];
+    var myMap = new ymaps.Map("map", {
+      center: salesCoords,
+      zoom: 16,
+    }, {
+      searchControlProvider: "yandex#search"
+    });
+    var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
+      iconLayout: "default#image",
+      iconImageHref: "./img/svg/placemark.svg",
+      iconImageSize: [50, 50],
+      iconImageOffset: [-25, -50],
+    });
+    myMap.geoObjects.add(myPlacemark);
+    myMap.controls.remove("geolocationControl");
+    myMap.controls.remove("searchControl");
+    myMap.controls.remove("trafficControl");
+    myMap.controls.remove("typeSelector");
+    myMap.controls.remove("fullscreenControl");
+    myMap.controls.remove("zoomControl");
+    myMap.controls.remove("rulerControl");
+  });
+</script>
+
+    </main>
+    <div class="modal " id="modal-price">
+  <div class="modal__body">
+    <button class="btn-reset modal__close">
+      <svg class="" width="28" height="28">
+        <use xlink:href="img/sprite.svg#close"></use>
+      </svg>
+    </button>
+    <div class="modal__content">
+      <p class="title-lg modal__title">
+        Расчитать стоимость
+      </p>
+
+      <form action="#" class="form modal-price__form">
+        <div class="form__field">
+          <div class="form__field-wrapper">
+            <input id="modal-price-volume" type="text" class="form__input input-name" name="Объем груза (количество штук)" />
+            <label class="form__label" for="modal-price-volume">Объем груза (количество штук)</label>
+          </div>
+        </div>
+        <div class="form__field ">
+          <div class="form__field-wrapper">
+            <input id="modal-price-category" type="text" class="form__input input-name" name="Категория товара" />
+            <label class="form__label" for="modal-price-category">Категория товара</label>
+          </div>
+        </div>
+        <div class="form__field form__field--long">
+          <div class="form__field-wrapper form__field-wrapper--area">
+            <textarea id="modal-price-message" class="form__input form__input--area input-mess" name="Сообщение"></textarea>
+            <label class="form__label" for="modal-price-message">Дополнительная информация</label>
+          </div>
+        </div>
+        <div class="form__field">
+          <div class="form__field-wrapper">
+            <input id="modal-price-name" type="text" class="form__input input-name" name="Имя" />
+            <label class="form__label" for="modal-price-name">Ваше имя</label>
+          </div>
+        </div>
+        <div class="form__field ">
+          <div class="form__field-wrapper">
+            <input id="modal-price-city" type="text" class="form__input input-name" name="Город" />
+            <label class="form__label" for="modal-price-city">Ваш город</label>
+          </div>
+        </div>
+        <div class="form__field">
+          <select name="Способ связи" class="visually-hidden select-contact">
+            <option value="">Выберите способ связи</option>
+            <option value="Telegram">Telegram</option>
+            <option value="Whatsapp">Whatsapp</option>
+            <option value="Email">Email</option>
+          </select>
+          <div class="dropdown form__dropdown">
+            <div class="dropdown__header">
+              <div class="dropdown__label">Куда прислать расчет стоимости?</div>
+              <div class="dropdown__capture">Whatsapp</div>
+              <div class="dropdown__btn">
+                <svg class="">
+                  <use xlink:href="img/sprite.svg#arr-down"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="dropdown__body">
+              <div class="dropdown__content">
+                <div class="dropdown__item"></div>
+                <div class="dropdown__item">Telegram</div>
+                <div class="dropdown__item">Whatsapp</div>
+                <div class="dropdown__item">Email</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form__field">
+          <div class="form__field-wrapper">
+            <input id="modal-price-tel" type="text" class="form__input input-tel" name="Телефон" style="display: block" />
+            <input id="modal-price-email" type="email" class="form__input input-email" name="Почта" style="display: none" />
+            <label class="form__label" for="modal-price-tel">телефон/почта</label>
+          </div>
+        </div>
+
+        <button class="btn btn-reset btn--accent form__btn" disabled>
+          Получить расчет стоимости
+        </button>
+      </form>
+    </div>
+
+    <div class="modal__img">
+      <picture>
+        <source srcset="./img/modal-img.webp" type="image/webp">
+        <img loading="lazy" src="./img/modal-img.jpg" class="image" width="707" height="800" alt="">
+      </picture>
+    </div>
+  </div>
+</div>
+
+    <div class="modal " id="modal-callback">
+  <div class="modal__body">
+    <button class="btn-reset modal__close">
+      <svg class="" width="28" height="28">
+        <use xlink:href="img/sprite.svg#close"></use>
+      </svg>
+    </button>
+    <div class="modal__content">
+      <p class="title-lg modal__title">
+        Оставить заявку
+      </p>
+
+      <form action="#" class="form modal-callback__form">
+        <div class="form__field form__field--long">
+          <div class="form__field-wrapper form__field-wrapper--area">
+            <textarea id="modal-callback-message" class="form__input form__input--area input-mess" name="Сообщение"></textarea>
+            <label class="form__label" for="modal-callback-message">Дополнительная информация</label>
+          </div>
+        </div>
+        <div class="form__field">
+          <div class="form__field-wrapper">
+            <input id="modal-callback-name" type="text" class="form__input input-name" name="Имя" />
+            <label class="form__label" for="modal-callback-name">Ваше имя</label>
+          </div>
+        </div>
+        <div class="form__field ">
+          <div class="form__field-wrapper">
+            <input id="modal-callback-city" type="text" class="form__input input-name" name="Город" />
+            <label class="form__label" for="modal-callback-city">Ваш город</label>
+          </div>
+        </div>
+        <div class="form__field">
+          <select name="Способ связи" class="visually-hidden select-contact">
+            <option value="">Выберите способ связи</option>
+            <option value="Telegram">Telegram</option>
+            <option value="Whatsapp">Whatsapp</option>
+            <option value="Email">Email</option>
+          </select>
+          <div class="dropdown form__dropdown">
+            <div class="dropdown__header">
+              <div class="dropdown__label">Куда прислать расчет стоимости?</div>
+              <div class="dropdown__capture">Whatsapp</div>
+              <div class="dropdown__btn">
+                <svg class="">
+                  <use xlink:href="img/sprite.svg#arr-down"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="dropdown__body">
+              <div class="dropdown__content">
+                <div class="dropdown__item"></div>
+                <div class="dropdown__item">Telegram</div>
+                <div class="dropdown__item">Whatsapp</div>
+                <div class="dropdown__item">Email</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form__field">
+          <div class="form__field-wrapper">
+            <input id="modal-callback-tel" type="text" class="form__input input-tel" name="Телефон" style="display: block" />
+            <input id="modal-callback-email" type="email" class="form__input input-email" name="Почта" style="display: none" />
+            <label class="form__label" for="modal-callback-tel">телефон/почта</label>
+          </div>
+        </div>
+
+        <button class="btn btn-reset btn--accent form__btn" disabled>
+          Получить расчет стоимости
+        </button>
+      </form>
+    </div>
+
+    <div class="modal__img">
+      <picture>
+        <source srcset="./img/modal-img.webp" type="image/webp">
+        <img loading="lazy" src="./img/modal-img.jpg" class="image" width="707" height="800" alt="">
+      </picture>
+    </div>
+  </div>
+</div>
+
+    <div class="modal" id="modal-success">
+  <div class="modal__body">
+    <button class="btn-reset modal__close">
+      <svg width="28" height="28">
+        <use xlink:href="img/sprite.svg#close"></use>
+      </svg>
+    </button>
+    <div class="modal__content modal-success__content">
+      <div class="modal-success__icon">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+          <circle cx="40" cy="40" r="40" fill="#4CAF50"/>
+          <path d="M25 40L35 50L55 30" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <p class="title-lg modal__title modal-success__title">
+        Заявка успешно отправлена!
+      </p>
+      <p class="modal-success__text">
+        Спасибо за обращение! Мы свяжемся с вами в ближайшее время.
+      </p>
+      <button class="btn btn-reset btn--accent modal-success__btn">
+        Отлично
+      </button>
+    </div>
+  </div>
+</div>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__container">
+      <address class="footer__address address">
+        <div class="address__item">
+          <div>
+            <a href="tel:89146800754" class="link-btn address__link">8 914 680 07 54</a>
+          </div>
+          <div>
+            <a href="tel:84232054084" class="link-btn address__link">8 423 205 40 84</a>
+          </div>
+        </div>
+        <div class="address__item">
+          <a href="mailto:sales@plforma.pro" class="link-btn address__link">sales@plforma.pro</a>
+        </div>
+        <div class="address__item">
+          <p>
+            Приморский край, Надеждинский р-н,<br>
+            c. Вольно-Надеждинское,<br>
+            тер. Опережающего Развития Приморье.
+          </p>
+        </div>
+      </address>
+
+      <div class="footer__right">
+        <address class="footer__socials">
+          <ul class="socials list-reset">
+            <li>
+              <a href="#" target="_blank">
+                <img src="./img/wa.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img src="./img/tg.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img src="./img/vk.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img src="./img/youtube.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <img src="./img/inst.svg" alt="">
+              </a>
+            </li>
+          </ul>
+        </address>
+
+        <div class="footer__links">
+          <div>
+            <a href="#" class="footer__link link-btn" target="_blank">Политика конфиденциальности</a>
+          </div>
+        </div>
+
+        <small class="footer__copy">
+          <p>
+            ©2025 Платформа
+          </p>
+        </small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>

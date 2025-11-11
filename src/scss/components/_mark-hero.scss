@@ -4,6 +4,32 @@
   height: 100vh;
   border-radius: 0 0 0.5rem 0.5rem;
   overflow: hidden;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+
+    width: 200rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+    background-image: radial-gradient(
+      50% 50% at 50% 50%,
+      rgb(0, 0, 0) 0%,
+      rgb(0, 0, 0, 0) 100%
+    );
+  }
+  &::before {
+    left: 0;
+    bottom: 0;
+    transform: translateX(-40%) translateY(60%);
+  }
+  &::after {
+    right: 0;
+    bottom: 0;
+    transform: translateX(30%) translateY(60%);
+  }
   @include mobile {
     border-radius: 0 0 1rem 1rem;
     margin-bottom: 5.4rem;
@@ -53,6 +79,8 @@
   }
 
   &__container {
+    position: relative;
+    z-index: 4;
     display: flex;
     flex-direction: column;
     height: 100%;
