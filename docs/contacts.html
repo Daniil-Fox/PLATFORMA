@@ -24,7 +24,10 @@
 
 <body class="page__body">
   <div class="site-container">
-    <header class="header">
+    <div id="page-fade-overlay"
+  style="position:fixed;inset:0;background:#fff;z-index:9999;opacity:1;transition:opacity .6s ease;pointer-events:auto;">
+</div>
+<header class="header">
   <div class="container">
     <div class="header__container">
       <a href="./" class="header__logo">
@@ -87,7 +90,53 @@
     </div>
   </div>
 </header>
+<script>
+  (function () {
+    var overlay = document.getElementById('page-fade-overlay');
+    if (!overlay) return;
 
+    var hideOverlay = function () {
+      if (!overlay) return;
+      // старт плавного исчезновения
+      overlay.style.opacity = '0';
+    };
+
+    // После завершения анимации удаляем плашку из DOM
+    var onTransitionEnd = function (e) {
+      if (e.propertyName !== 'opacity') return;
+      if (!overlay) return;
+      overlay.parentNode && overlay.parentNode.removeChild(overlay);
+      overlay = null;
+      window.removeEventListener('pageshow', onPageShow);
+    };
+
+    var onPageShow = function (e) {
+      // Для BFCache: при возврате назад мгновенно скрываем плашку
+      if (e.persisted && overlay) {
+        overlay.style.transition = 'none';
+        overlay.style.opacity = '0';
+        // Удалим на следующем тике
+        setTimeout(function () {
+          if (!overlay) return;
+          overlay.parentNode && overlay.parentNode.removeChild(overlay);
+          overlay = null;
+        }, 0);
+      }
+    };
+
+    overlay.addEventListener('transitionend', onTransitionEnd, { once: true });
+    window.addEventListener('pageshow', onPageShow);
+
+    // Ждем полной загрузки стилей/изображений для чистого fade-in
+    if (document.readyState === 'complete') {
+      requestAnimationFrame(hideOverlay);
+    } else {
+      window.addEventListener('load', function () {
+        requestAnimationFrame(hideOverlay);
+      }, { once: true });
+    }
+  })();
+</script>
     <main class="main">
       <div class="main-top">
         <div class="container">

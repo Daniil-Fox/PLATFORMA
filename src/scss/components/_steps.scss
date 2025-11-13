@@ -61,6 +61,19 @@
         margin-bottom: 0;
       }
     }
+  }
+
+  &__tab-btn {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 130%;
+    color: var(--pl-black);
+    transition-property: color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
     &::before {
       content: counter(counter);
       display: inline-block;
@@ -78,18 +91,6 @@
         display: none;
       }
     }
-  }
-
-  &__tab-btn {
-    display: inline-block;
-    text-align: left;
-    font-weight: 500;
-    font-size: 2.8rem;
-    line-height: 130%;
-    color: var(--pl-black);
-    transition-property: color;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
     span {
       display: none;
 
@@ -218,9 +219,11 @@
   }
 
   &__tab.active {
-    &::before,
     .steps__tab-btn {
       color: var(--pl-blue);
+      &::before {
+        color: var(--pl-blue);
+      }
     }
 
     .steps__tab-desc {
@@ -230,24 +233,31 @@
 
   &__tab:not(.active) {
     @include hover {
-      &::before,
       .steps__tab-btn {
         color: var(--pl-lightblue);
+        &::before {
+          color: var(--pl-blue);
+        }
       }
     }
 
     &:focus-visible {
       outline: none;
-      &::before,
+
       .steps__tab-btn {
         color: var(--pl-lightblue);
+        &::before {
+          color: var(--pl-blue);
+        }
       }
     }
 
     &:active {
-      &::before,
       .steps__tab-btn {
         color: var(--pl-blue);
+        &::before {
+          color: var(--pl-blue);
+        }
       }
     }
   }

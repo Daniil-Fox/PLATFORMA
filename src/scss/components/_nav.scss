@@ -31,6 +31,14 @@
           color: var(--pl-blue);
         }
       }
+
+      &.current_page_item {
+        a {
+          color: var(--pl-blue);
+          cursor: default;
+          pointer-events: none;
+        }
+      }
     }
   }
 }
