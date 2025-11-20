@@ -40,23 +40,17 @@
     height: 100%;
     width: 100%;
     z-index: 2;
-    transition-property: opacity;
-    transition-timing-function: ease;
-    transition-duration: 0.2s;
+    overflow: hidden;
+
     img {
       position: absolute;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
-    }
-
-    &_hover {
-      z-index: 1;
-
-      @include mobile {
-        display: none;
-      }
+      transition-property: transform;
+      transition-timing-function: ease;
+      transition-duration: 0.5s;
     }
   }
 
@@ -93,11 +87,8 @@
   }
 
   @include hover {
-    .b-item__img {
-      opacity: 0;
-    }
-    .b-item__img_hover {
-      opacity: 1;
+    .b-item__img img {
+      transform: scale(1.05);
     }
   }
 }

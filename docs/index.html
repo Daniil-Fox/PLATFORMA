@@ -27,7 +27,7 @@
     <div id="page-fade-overlay"
   style="position:fixed;inset:0;background:#fff;z-index:9999;opacity:1;transition:opacity .6s ease;pointer-events:auto;">
 </div>
-<header class="header">
+<header class="header header_main">
   <div class="container">
     <div class="header__container">
       <a href="./" class="header__logo">
@@ -139,25 +139,114 @@
 </script>
     <main class="main">
       <section class="hero">
-  <div class="hero__img">
-    <picture>
-      <source srcset="./img/hero-mob.webp" type="image/webp" media="(max-width: 576px)">
-      <source srcset="./img/hero.webp" type="image/webp">
-      <img loading="lazy" src="./img/hero.jpg" class="image" width="1920" height="1000" aria-hidden="true" alt="">
-    </picture>
-  </div>
-  <div class="container hero__container">
-    <div class="hero__content">
-      <h1 class="hero__title">
-        От&nbsp;таможни
-        до&nbsp;маркировки
-        &mdash;&nbsp;единая&nbsp;PLATFORMA
-      </h1>
-      <button class="btn btn-reset btn_big hero__btn">Оставить заявку</button>
+  <div class="hero__slider swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide swiper-slide-first">
+        <div class="container">
+          <div class="hero__slide ">
+            <div class="hero__img">
+              <picture>
+                <source srcset="./img/hero/01-mob.webp" type="image/webp" media="(max-width: 576px)">
+                <source srcset="./img/hero/01.webp" type="image/webp">
+                <img loading="lazy" src="./img/hero/01.jpg" class="image" width="1920" height="1000" aria-hidden="true"
+                  alt="">
+              </picture>
+            </div>
+
+            <div class="hero__content">
+              <h1 class="hero__title">
+                От&nbsp;таможни
+                до&nbsp;маркировки
+                <span>
+                  единая<br>
+                  PLATFORMA
+                </span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="container">
+          <div class="hero__slide">
+            <div class="hero__img">
+              <picture>
+                <source srcset="./img/hero/02-mob.webp" type="image/webp" media="(max-width: 576px)">
+                <source srcset="./img/hero/02.webp" type="image/webp">
+                <img loading="lazy" src="./img/hero/02.jpg" class="image" width="1920" height="1000" aria-hidden="true"
+                  alt="">
+              </picture>
+            </div>
+
+            <div class="hero__content hero__content_sec hero__content_bg">
+              <p class="hero__capture">Акция</p>
+              <h2 class="hero__title">
+                Хранение на&nbsp;складе в&nbsp;период маркировки бесплатно
+              </h2>
+              <button class="btn btn-reset hero__btn" data-target="modal-callback">
+                Оставить заявку
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="container">
+          <div class="hero__slide">
+            <div class="hero__img">
+              <picture>
+                <source srcset="./img/hero/03-mob.webp" type="image/webp" media="(max-width: 576px)">
+                <source srcset="./img/hero/03.webp" type="image/webp">
+                <img loading="lazy" src="./img/hero/03.jpg" class="image" width="1920" height="1000" aria-hidden="true"
+                  alt="">
+              </picture>
+            </div>
+
+            <div class="hero__content hero__content_sec hero__content_bg">
+              <p class="hero__capture">До 300 000 Р</p>
+              <h2 class="hero__title">
+                Поможем избежать штрафов зa&nbsp;отсутствие маркировки
+              </h2>
+              <button class="btn btn-reset hero__btn" data-target="modal-callback">
+                Оставить заявку
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__thumbs">
+      <div class=" swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="hero__thumb">
+              <picture>
+                <source srcset="./img/hero/01-thumb.webp" type="image/webp">
+                <img loading="lazy" src="./img/hero/01-thumb.jpg" class="image" width="70" height="70"
+                  aria-hidden="true" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hero__thumb">
+              <picture>
+                <source srcset="./img/hero/02-thumb.webp" type="image/webp">
+                <img loading="lazy" src="./img/hero/02-thumb.jpg" class="image" width="70" height="70"
+                  aria-hidden="true" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hero__thumb">
+              <picture>
+                <source srcset="./img/hero/03-thumb.webp" type="image/webp">
+                <img loading="lazy" src="./img/hero/03-thumb.jpg" class="image" width="70" height="70"
+                  aria-hidden="true" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
       <section class="brief">
   <div class="container">
     <div class="brief__container">
@@ -170,17 +259,12 @@
               <img loading="lazy" src="./img/brief/01.png" class="image" width="585" height="593" alt="">
             </picture>
           </div>
-          <div class="b-item__img b-item__img_hover">
-            <picture>
-              <source srcset="./img/brief/01-hover.webp" type="image/webp">
-              <img loading="lazy" src="./img/brief/01-hover.png" class="image" width="585" height="593" alt="">
-            </picture>
-          </div>
+
 
         </div>
 
         <div class="b-item__content">
-          <p class="b-item__title">Цифровая маркировка</p>
+          <a href="#" class="b-item__title">Цифровая маркировка</a>
         </div>
       </div>
 
@@ -193,17 +277,11 @@
               <img loading="lazy" src="./img/brief/02.png" class="image" width="585" height="593" alt="">
             </picture>
           </div>
-          <div class="b-item__img b-item__img_hover">
-            <picture>
-              <source srcset="./img/brief/02-hover.webp" type="image/webp">
-              <img loading="lazy" src="./img/brief/02-hover.png" class="image" width="585" height="593" alt="">
-            </picture>
-          </div>
 
         </div>
 
         <div class="b-item__content">
-          <p class="b-item__title">Таможенный склад</p>
+          <a href="#" class="b-item__title">Таможенный склад</a>
         </div>
       </div>
 
@@ -216,23 +294,16 @@
               <img loading="lazy" src="./img/brief/03.png" class="image" width="585" height="593" alt="">
             </picture>
           </div>
-          <div class="b-item__img b-item__img_hover">
-            <picture>
-              <source srcset="./img/brief/03-hover.webp" type="image/webp">
-              <img loading="lazy" src="./img/brief/03-hover.png" class="image" width="585" height="593" alt="">
-            </picture>
-          </div>
 
         </div>
 
         <div class="b-item__content">
-          <p class="b-item__title">Терминал</p>
+          <a href="#" class="b-item__title">Терминал</a>
         </div>
       </div>
     </div>
   </div>
 </section>
-
       <section class="storage">
   <div class="container">
     <div class="storage__header">

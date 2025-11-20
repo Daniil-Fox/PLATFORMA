@@ -1,19 +1,109 @@
 <section class="hero">
-  <div class="hero__img">
-    <picture>
-      <source srcset="./img/hero-mob.webp" type="image/webp" media="(max-width: 576px)">
-      <source srcset="./img/hero.webp" type="image/webp">
-      <img loading="lazy" src="./img/hero.jpg" class="image" width="1920" height="1000" aria-hidden="true" alt="">
-    </picture>
-  </div>
-  <div class="container hero__container">
-    <div class="hero__content">
-      <h1 class="hero__title">
-        От&nbsp;таможни
-        до&nbsp;маркировки
-        &mdash;&nbsp;единая&nbsp;PLATFORMA
-      </h1>
-      <button class="btn btn-reset btn_big hero__btn">Оставить заявку</button>
+  <div class="hero__slider swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide swiper-slide-first">
+        <div class="container">
+          <div class="hero__slide ">
+            <div class="hero__img">
+              <picture>
+                <source srcset="./img/hero/01-mob.webp" type="image/webp" media="(max-width: 576px)">
+                <source srcset="./img/hero/01.webp" type="image/webp">
+                <img loading="lazy" src="./img/hero/01.jpg" class="image" width="1920" height="1000" aria-hidden="true"
+                  alt="">
+              </picture>
+            </div>
+
+            <div class="hero__content">
+              <h1 class="hero__title">
+                От&nbsp;таможни
+                до&nbsp;маркировки
+                <span>
+                  единая<br>
+                  PLATFORMA
+                </span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="container">
+          <div class="hero__slide">
+            <div class="hero__img">
+              <picture>
+                <source srcset="./img/hero/02-mob.webp" type="image/webp" media="(max-width: 576px)">
+                <source srcset="./img/hero/02.webp" type="image/webp">
+                <img loading="lazy" src="./img/hero/02.jpg" class="image" width="1920" height="1000" aria-hidden="true"
+                  alt="">
+              </picture>
+            </div>
+
+            <div class="hero__content hero__content_sec hero__content_bg">
+              <p class="hero__capture">Акция</p>
+              <h2 class="hero__title">
+                Хранение на&nbsp;складе в&nbsp;период маркировки бесплатно
+              </h2>
+              <button class="btn btn-reset hero__btn" data-target="modal-callback">
+                Оставить заявку
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="container">
+          <div class="hero__slide">
+            <div class="hero__img">
+              <picture>
+                <source srcset="./img/hero/03-mob.webp" type="image/webp" media="(max-width: 576px)">
+                <source srcset="./img/hero/03.webp" type="image/webp">
+                <img loading="lazy" src="./img/hero/03.jpg" class="image" width="1920" height="1000" aria-hidden="true"
+                  alt="">
+              </picture>
+            </div>
+
+            <div class="hero__content hero__content_sec hero__content_bg">
+              <p class="hero__capture">До 300 000 Р</p>
+              <h2 class="hero__title">
+                Поможем избежать штрафов зa&nbsp;отсутствие маркировки
+              </h2>
+              <button class="btn btn-reset hero__btn" data-target="modal-callback">
+                Оставить заявку
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__thumbs">
+      <div class=" swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="hero__thumb">
+              <picture>
+                <source srcset="./img/hero/01-thumb.webp" type="image/webp">
+                <img loading="lazy" src="./img/hero/01-thumb.jpg" class="image" width="70" height="70"
+                  aria-hidden="true" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hero__thumb">
+              <picture>
+                <source srcset="./img/hero/02-thumb.webp" type="image/webp">
+                <img loading="lazy" src="./img/hero/02-thumb.jpg" class="image" width="70" height="70"
+                  aria-hidden="true" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hero__thumb">
+              <picture>
+                <source srcset="./img/hero/03-thumb.webp" type="image/webp">
+                <img loading="lazy" src="./img/hero/03-thumb.jpg" class="image" width="70" height="70"
+                  aria-hidden="true" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

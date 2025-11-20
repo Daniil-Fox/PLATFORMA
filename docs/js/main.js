@@ -17207,7 +17207,74 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
 
 
-swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper.use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Mousewheel, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.FreeMode, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.EffectFade]);
+swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper.use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Autoplay, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Mousewheel, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.FreeMode, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.EffectFade, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Thumbs]);
+const heroThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper(".hero__thumbs > .swiper", {
+  slidesPerView: "auto",
+  spaceBetween: 10
+});
+const HERO_AUTOPLAY_DELAY = 6000;
+const HERO_THUMB_PROGRESS_CLASS = "hero-thumb-progressing";
+const HERO_THUMB_PAUSE_CLASS = "hero-thumb-progress-paused";
+const heroThumbSlides = () => Array.from(heroThumbs?.slides ?? []);
+const resetThumbProgress = () => {
+  heroThumbSlides().forEach(slide => {
+    slide.classList.remove(HERO_THUMB_PROGRESS_CLASS);
+    slide.classList.remove(HERO_THUMB_PAUSE_CLASS);
+  });
+};
+const restartThumbProgress = index => {
+  if (!heroThumbs) return;
+  resetThumbProgress();
+  const slides = heroThumbSlides();
+  const target = slides[index];
+  if (!target) return;
+  target.offsetWidth; // force reflow to restart animation
+  target.classList.add(HERO_THUMB_PROGRESS_CLASS);
+};
+const toggleThumbProgressPause = paused => {
+  heroThumbSlides().forEach(slide => {
+    if (slide.classList.contains(HERO_THUMB_PROGRESS_CLASS)) {
+      slide.classList.toggle(HERO_THUMB_PAUSE_CLASS, paused);
+    }
+  });
+};
+const heroThumbsRoot = document.querySelector(".hero__thumbs");
+if (heroThumbsRoot) {
+  heroThumbsRoot.style.setProperty("--hero-thumb-progress-duration", `${HERO_AUTOPLAY_DELAY}ms`);
+}
+const heroSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper(".hero__slider", {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true
+  },
+  loop: true,
+  autoplay: {
+    delay: HERO_AUTOPLAY_DELAY,
+    disableOnInteraction: false
+  },
+  thumbs: {
+    swiper: heroThumbs
+  }
+});
+if (heroSlider) {
+  heroSlider.on("slideChangeTransitionStart", () => {
+    restartThumbProgress(heroSlider.realIndex);
+  });
+  heroSlider.on("autoplayStart", () => {
+    restartThumbProgress(heroSlider.realIndex);
+    toggleThumbProgressPause(false);
+  });
+  heroSlider.on("autoplayResume", () => toggleThumbProgressPause(false));
+  heroSlider.on("autoplayPause", () => toggleThumbProgressPause(true));
+  heroSlider.on("autoplayStop", () => toggleThumbProgressPause(true));
+
+  // инициализируем прогресс после первого рендера
+  requestAnimationFrame(() => {
+    restartThumbProgress(heroSlider.realIndex);
+  });
+}
 new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper(".infra__slider > .swiper", {
   slidesPerView: "auto",
   spaceBetween: 20,

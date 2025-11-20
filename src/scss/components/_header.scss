@@ -6,12 +6,16 @@
   z-index: 100;
   width: 100%;
   padding: 2rem 0;
-  background-color: var(--pl-white);
   border-radius: 0 0 0.5rem 0.5rem;
+  background-color: var(--pl-white);
   box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
 
-  transition-property: transform;
-  transition-duration: .3s;
+  transition-property: transform, background-color;
+  transition-duration: 0.3s;
+  &_main {
+    background-color: transparent;
+    box-shadow: none;
+  }
   @include mobile {
     border-radius: 0 0 1rem 1rem;
   }
@@ -66,6 +70,10 @@
       display: block;
     }
   }
+}
+.header--fixed {
+  background-color: var(--pl-white);
+  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.1);
 }
 .header--hidden {
   transform: translateY(-200%);
